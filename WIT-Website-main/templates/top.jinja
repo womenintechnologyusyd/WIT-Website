@@ -1,0 +1,98 @@
+
+{% extends 'index.jinja' %}
+
+
+{% block navbar %} 
+
+    <style>
+        #navbar {
+            background: white;
+            color: black;
+            /* position: fixed; */
+            top: 0;
+            height: 60px;
+            line-height: 60px;
+            width: 100vw;
+            z-index: 10;
+        }
+
+        .logo {
+            float: left;
+            margin-left: 28px;
+        }
+
+        .nav-wrapper {
+            margin: auto;
+            text-align: right;
+        }
+
+        #navbar ul {
+            display: inline-block;
+            margin-top: -2px;
+            text-align: right; 
+        } 
+        @media(max-width: 640px) {
+            #navbar ul {
+                display: none;
+            }
+        } @media(orientation: landscape) {
+            #navbar ul {
+                display: inline-block;
+            }
+        }
+
+        #navbar li {
+            display: inline-block;
+        }
+
+        #navbar li a {
+            color: black;
+            display: block;
+            font-size: 15px;
+            height: 50px;
+            letter-spacing: 1px;
+            margin: 0 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        li a:hover {
+            border-bottom: 1px solid rgb(28, 121, 184);
+            color: rgb(28, 121, 184);
+            transition: all 1s ease;
+            -webkit-transition: all 1s ease;
+        }
+        
+
+        .active { /* Indicates the page the user is on */
+            border-bottom: 1px solid red;
+            transition: all 1s ease;
+        }
+
+    </style>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="">
+        <nav class="nav-wrapper">
+            <div class="logo">
+                <a href ={{ url_for('home') }}><img img id="WITlogo" alt="WIT Logo" src="/Images/white_logo.jpg" width="100px"></a>
+            </div>
+
+            <ul>
+                <li><a class="active" href={{ url_for('aboutus') }}>About Us</a></li>
+                <li><a href={{ url_for('events') }}>Events</a></li>
+                <li><a href={{ url_for('sponsors') }}>Sponsors</a></li>
+                <li><a href={{ url_for('publications') }}>Publications</a></li>
+                <li><a href={{ url_for('contactus') }}>Contact Us</a></li>
+                <li><a href="https://usu.edu.au/clubs/women-in-technology/" target="_blank">Join Us</a></li>
+            </ul>
+                
+
+        </nav>
+    </nav>
+
+    <body>
+        {% block content %} {% endblock %}
+    </body>
+    
+{% endblock %}
