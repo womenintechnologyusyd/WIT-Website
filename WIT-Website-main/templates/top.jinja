@@ -12,6 +12,7 @@
             line-height: 60px;
             width: 100vw;
             z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
@@ -63,9 +64,10 @@
         
 
         .active { /* Indicates the page the user is on */
-            border-bottom: 1px solid red;
+            border-bottom: 2px solid rgb(105, 36, 137);
             transition: all 1s ease;
         }
+        
 
     </style>
 
@@ -73,9 +75,8 @@
     <nav id="navbar" class="">
         <nav class="nav-wrapper">
             <div class="logo">
-                <a href ={{ url_for('index') }}><img img id="WITlogo" alt="WIT Logo" src="/Images/white_logo.jpg" width="100px"></a>
+                <a href ={{ url_for('index') }}><img img id="WITlogo" alt="WIT Logo" src="/static/images/wit_logo.jpg" width="100px"></a>
             </div>
-
             <ul>
                 <li><a class="active" href={{ url_for('aboutus') }}>About Us</a></li>
                 <li><a href={{ url_for('events') }}>Events</a></li>
@@ -84,8 +85,6 @@
                 <li><a href={{ url_for('contactus') }}>Contact Us</a></li>
                 <li><a href="https://usu.edu.au/clubs/women-in-technology/" target="_blank">Join Us</a></li>
             </ul>
-                
-
         </nav>
     </nav>
 
