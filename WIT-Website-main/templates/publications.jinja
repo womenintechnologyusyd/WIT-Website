@@ -3,11 +3,12 @@
 {% block content %} 
 
     <h1>PUBLICATIONS</h1>
-    <p>paragraph...</p>
-
-
- 
-
-
+    
+    <figure style="display: inline-block; text-align: center;">
+        <a href="{{ url_for('static', filename='prospectus.pdf') }}" target="_blank">
+            <img src="{{ url_for('static', filename='prospectus-thumbnail.png') }}" alt="Magazine Front Page" width="200">
+        </a>
+        <figcaption>Prospectus 2024</figcaption>
+    </figure>
 
 {% endblock %}
