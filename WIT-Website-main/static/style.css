@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'OpenSauceOne';
+    src: url('/static/fonts/OpenSauceOne-Regular.ttf') format('truetype');
+}
+
 * {
     border: 0;
     box-sizing: border-box;
@@ -11,6 +16,7 @@
 }
 
 body {
+  font-family: 'MyCustomFont', sans-serif;
   background-color: white;
 }
 
