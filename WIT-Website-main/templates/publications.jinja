@@ -2,13 +2,22 @@
 
 {% block content %} 
 
-    <h1>PUBLICATIONS</h1>
-    
-    <figure style="display: inline-block; text-align: center;">
-        <a href="{{ url_for('static', filename='prospectus.pdf') }}" target="_blank">
-            <img src="{{ url_for('static', filename='prospectus-thumbnail.png') }}" alt="Magazine Front Page" width="200">
+<h1>Publications</h1>
+
+<figure style="display: inline-block; text-align: center;">
+    <a href="{{ url_for('static', filename='prospectus.pdf') }}" target="_blank">
+        <img src="{{ url_for('static', filename='prospectus-thumbnail.png') }}" alt="Magazine Front Page" width="200">
+    </a>
+    <figcaption>
+        <a href="{{ url_for('static', filename='prospectus.pdf') }}" target="_blank" style="text-decoration: none; color: inherit;">
+            Prospectus 2024 
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
         </a>
-        <figcaption>Prospectus 2024</figcaption>
-    </figure>
+    </figcaption>
+</figure>
 
 {% endblock %}
