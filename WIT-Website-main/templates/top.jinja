@@ -4,19 +4,20 @@
     <style>
         #navbar {
             background: white;
-            color: black;       /* text colour */
+            color: black;     
             /*position: fixed;*/      /* navigation bar remains fixed when scrolling */
             top: 0;
             height: 80px;
             line-height: 80px;    /* vertically aligns text */
-            width: 100vw;
+            width: 100%;
             z-index: 10;
         }
 
         .logo {
             float: left;
-            margin-left: 28px;
-        }
+            margin-left: 40px;
+            margin-top: 15px;
+        } 
 
         .nav-wrapper {
             margin: auto;
@@ -27,8 +28,7 @@
             display: inline-block;
             margin-top: -2px;
             text-align: right; 
-        } 
-        @media(max-width: 640px) {
+        } @media(max-width: 640px) {
             #navbar ul {
                 display: none;
             }
@@ -73,7 +73,7 @@
     <nav id="navbar" class="">
         <nav class="nav-wrapper">
             <div class="logo">
-                <a href ={{ url_for('index') }}><img img id="WITlogo" alt="WIT Logo" src="/static/images/wit_logo.jpg" width="100px"></a>
+                <a href ={{ url_for('index') }}><img img id="WITlogo" alt="WIT Logo" src="/static/images/wit_logo.jpg" width="80px"></a>
             </div>
             <ul>
                 <li><a class="active" href={{ url_for('aboutus') }}>About Us</a></li>

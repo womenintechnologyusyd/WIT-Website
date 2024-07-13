@@ -10,7 +10,6 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = secrets.token_hex()
 socketio = SocketIO(app)
 
-# don't remove this!!
 # import socket_routes
 
 # home page
@@ -43,11 +42,11 @@ def publications():
 def contactus():
     return render_template("contactus.jinja")
 
-
 # handler when a "404" error happens
 @app.errorhandler(404)
 def page_not_found(_):
     return render_template('404.jinja'), 404
+
 
 
 if __name__ == '__main__':

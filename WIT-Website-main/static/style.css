@@ -7,13 +7,8 @@
 * {
     border: 0;
     box-sizing: border-box;
-    margin: 50;
+    margin: 0;
     padding: 0;
-
-}
-
-.event_list {
-    background-color:#717171
 }
 
 body {
@@ -24,17 +19,17 @@ body {
 h1 {
   font-size: 24px;
   text-align: left;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin: 10px; 
+  margin-left: 40px;
+}
+
+p {
+    margin-left: 40px;
 }
 
 h2 {
     font-size: 20px;
     text-align: center;
-}
-
-.text {
-  color: red;
 }
 
 .many_center {
@@ -50,17 +45,16 @@ h2 {
     margin-right: auto;
 }
 
+#socials {
+    margin-left: 5px;
+}
+
+
 footer {
-    display: block;
     text-align: center;
     padding: 20px;
     background-color: #6f56a9;
-    color: white;
-}
-
-.about {
-    background-color: #cdc4e1;
-    padding: 20px;
+    color: black;
 }
 
 .profile {
@@ -78,14 +72,15 @@ footer {
     height: 510px;
     position: relative;
 }
+
   
-.slider img { /*HOW TO CHANGE SO THAT THE IMAGE ISNT ALWAYS BEING SQUEEZED */
+.slider img { 
     width: 100%; 
-    height: 500px;
+    height: 500PX; /* Set the Height to auto but after X width, keep the image set. */
     position: absolute;
     top: 0;
     left: 0;
-}
+} 
   
 .slider img:first-child {
     z-index: 1;

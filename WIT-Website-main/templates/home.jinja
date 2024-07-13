@@ -1,34 +1,76 @@
 {% extends 'top.jinja' %}
 
 {% block content %} 
+    <br><h1>HOMEPAGE</h1>
 
-    <h1>HOMEPAGE</h1>
-    <p>paragraph...</p>
+    <!-- Mission Statement -->
+    <div class="many_center">
+        <a href="https://www.atlassian.com/">
+            <img img id="mascot_design" alt="Floral WIT Design" src="/static/images/filler_design.jpg" width="200px">
+        </a>
+        <p><b>OUR MISSION IS .............................................................................</b></p>
+    </div>
+   
+    <br><br><br> 
 
+    <!-- SlideShow -->
+    <div class="slider">
+        <img id="img-1" src="/static/images/temp1.jpeg" alt="Image 1"/>
+        <img id="img-2" src="/static/images/temp2.jpeg" alt="Image 2"/>
+        <img id="img-3" src="/static/images/temp3.jpg" alt="Image 3"/>
+    </div>
+    <div class="navigation-button">
+        <span class="dot" onclick="changeSlide(0)"></span>
+        <span class="dot" onclick="changeSlide(1)"></span>
+        <span class="dot" onclick="changeSlide(2)"></span>
+    </div>
 
- <!-- Sponsors -->
-    <section>
+    <script src="/static/js/libs/main.js"></script>
+
+    <br><br><br> 
+
+    <!-- Socials -->
+    <h2>Follow Our Socials!</h2><br><br> 
+    <div class="many_center">
+        <a href="https://www.linkedin.com/company/witusyd/">
+            <img img id="Linkedin" alt="LinkedIn Logo" src="/static/images/linkedin.png" width="100px">
+        </a>     
+        <a href="https://www.instagram.com/witusyd/">
+            <img img id="Instagram" alt="Instagram Logo" src="/static/images/insta.png" width="100px">
+        </a>   
+        <a href="https://www.facebook.com/witusyd">
+            <img img id="Facebook" alt="Facebook Logo" src="/static/images/facebook.png" width="100px">
+        </a>    
+    </div>
+
+    <br><br><br> 
+
+    <!-- Sponsors -->
+    <section id="home_sponsor">
         <h1>Sponsors</h1>
         <h2> Silver Tier</h2>
         
         <div class="many_center">
             <a href="https://www.atlassian.com/">
-                <img img id="sponsor1" alt="Atlassian Logo" src="Images/Atlassian_logo.png" width="200px">
+                <img img id="sponsor1" alt="Atlassian Logo" src="/static/images/Atlassian_logo.png" width="200px">
             </a>
-            <a href="https://www.recordpoint.com/">
-                <img img id="sponsor2" alt="RecordPoint Logo" src="Images/RecordPoint_logo.png" width="300px">
-            </a>
+            <a href="http://e-lead.com.au/">
+                <img img id="sponsor4" alt="E-Lead Logo" src="/static/images/Elead_logo.png" width="200px">
+            </a> 
             <a href="https://www.janestreet.com/">
-                <img img id="sponsor3" alt="JaneStreet Logo" src="Images/JaneStreet_logo.png" width="200px">
+                <img img id="sponsor3" alt="JaneStreet Logo" src="/static/images/JaneStreet_logo.png" width="200px">
             </a>
         </div>
         <div class="many_center">
-            <a href="http://e-lead.com.au/">
-                <img img id="sponsor4" alt="E-Lead Logo" src="Images/Elead_logo.png" width="200px">
+            <a href="https://www.rabobank.com.au/">
+                <img img id="sponsor4" alt="Rabobank Logo" src="/static/images/rabobank_logo.png" width="200px">
             </a>    
         </div>
     </section>
 
+    <footer>  
+        {% block footer %} {% endblock %}
+    </footer>
 
 
 {% endblock %}
