@@ -12,19 +12,15 @@
 }
 
 body {
-  font-family: 'OpenSauceOne', sans-serif;
-  background-color: white;
+    font-family: 'OpenSauceOne', sans-serif;
+    margin: 0 75px;
 }
 
 h1 {
-  font-size: 24px;
-  text-align: left;
-  margin: 10px; 
-  margin-left: 40px;
-}
-
-p {
-    margin-left: 40px;
+    font-size: 36px;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -49,7 +45,6 @@ h2 {
     margin-left: 5px;
 }
 
-
 footer {
     text-align: center;
     padding: 20px;
@@ -62,7 +57,6 @@ footer {
     font-size: 15px;
 }
 
-
 /* 
     Banner Slideshow 
  */
@@ -73,7 +67,6 @@ footer {
     position: relative;
 }
 
-  
 .slider img { 
     width: 100%; 
     height: 500PX; /* Set the Height to auto but after X width, keep the image set. */
