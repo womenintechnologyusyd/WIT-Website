@@ -11,7 +11,13 @@
 }
 
 body {
+    min-height: 100vh;
     font-family: 'OpenSauceOne', sans-serif;
+    margin: 0 75px;
+
+    /* Additions for the footer */
+    position: relative;
+    padding-bottom: 200px;  
 }
 
 h1 {
@@ -44,11 +50,16 @@ h2 {
     margin-left: 5px;
 }
 
+
 footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     text-align: center;
     padding: 20px;
     background-color: #6f56a9;
     color: black;
+    height: 200px; 
 }
 
 .profile {
