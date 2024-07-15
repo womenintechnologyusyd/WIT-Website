@@ -4,57 +4,76 @@
     <style>
 
         :root {
-            --dark-purple: rgb(105, 36, 137);
-            --darker-purple: rgb(85, 28, 111);
-            --border-bottom: 1.5px;
+            --dark-purple: rgb(105, 36, 137);  /* Default WIT dark purple */
+            --darker-purple: rgb(85, 28, 111);  /* Darker purple for hovering */
+            --menu-gap: 20px; /* Gap between About Us, Events, etc.*/
         }
 
+        /* Navigation bar */
         #navbar {
+            width: 100%;  /* The navbar stretches across the entire window */
+            height: 75px;
+            z-index: 10; /* The navbar is stacked on top of most other UI elements */
             background: white;
-            height: 60px;
-            margin: 0 -75px;
-            width: calc(100% + 150px);
-            z-index: 10;
             box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
         }
 
+        /* Wrapper containing logo, page links and join button */
         #navbar-wrapper {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
             height: 100%;
-            margin: 0px 75px;
+            margin: 0px 60px;
+            align-items: center; /* Vertically aligns children */
         }
 
-        #wit-logo {
+        /* Menu contains page links and join button */
+        #menu {
             display: flex;
-            align-items: center;
-            border-bottom: none !important;
-        } 
-
-        #navbar-links a {
-            color: black;
-            font-size: 15px;
+            height: 100%;
+            margin-left: auto; /* Align navigation menu to the right */
+            gap: var(--menu-gap); /* Inserts a gap between children */
             letter-spacing: 1px;
-            margin-left: 17px;
-            text-decoration: none;
+            font-size: 14px;
             text-transform: uppercase;
         }
 
-        #navbar-links a:hover {
-            border-bottom: var(--border-bottom) solid var(--dark-purple);
+        /* Wrapper containing the page links */
+        #page-link-wrapper {
+            display: flex;
+            height: 100%;
+            gap: var(--menu-gap); /* Inserts a gap between children */
         }
 
+        /* Page links include About Us, Events, Sponsors, Publications and Contact Us */
+        .page-link {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            padding-bottom: 3px; /* Add padding to compensate for purple border */
+            color: black;
+            text-decoration: none;
+        }
+
+        .page-link:hover {
+            border-bottom: 3px solid var(--dark-purple);
+            padding-bottom: 0; /* Remove the padding when purple border is added */
+        }
+
+        /* Join Us button*/
         #join-button {
-            background-color: var(--dark-purple);
-            color: white !important;
+            display: flex;
+            align-items: center;
+            margin-top: auto;
+            margin-bottom: auto;
             padding: 10px 20px;
             border-radius: 25px;
+            background-color: var(--dark-purple);
+            color: white;
+            text-decoration: none;
         }
 
         #join-button:hover {
             background-color: var(--darker-purple);
-            border-bottom: none !important;
         }
 
     </style>
@@ -62,18 +81,18 @@
     <!-- Navigation bar -->
     <nav id="navbar">
         <nav id="navbar-wrapper">
-            <div id="wit-logo">
-                <a href ={{ url_for('index') }} id="wit-logo"><img img id="wit-logo-img" alt="WIT Logo" src="/static/images/wit_logo.jpg" width="80px"></a>
-            </div>
-            <div id="navbar-links">
-                <a href={{ url_for('aboutus') }}>About Us</a>
-                <a href={{ url_for('events') }}>Events</a>
-                <a href={{ url_for('sponsors') }}>Sponsors</a>
-                <a href={{ url_for('publications') }}>Publications</a>
-                <a href={{ url_for('contactus') }}>Contact Us</a>
+            <a href ={{ url_for('index') }}><img img id="wit-logo-img" alt="WIT Logo" src="/static/images/wit_logo.jpg" width="80px"></a>
+            <div id="menu">
+                <div id="page-link-wrapper">
+                    <a href={{ url_for('aboutus') }} class="page-link">About Us</a>
+                    <a href={{ url_for('events') }} class="page-link">Events</a>
+                    <a href={{ url_for('sponsors') }} class="page-link">Sponsors</a>
+                    <a href={{ url_for('publications') }} class="page-link">Publications</a>
+                    <a href={{ url_for('contactus') }} class="page-link">Contact Us</a>
+                </div>
                 <a id="join-button" href="https://usu.edu.au/clubs/women-in-technology/" target="_blank">
                     Join Us 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.45" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.45" stroke-linejoin="round" style="margin-left: 5px;">
                         <path d="M18 13v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                         <polyline points="15 3 21 3 21 9"></polyline>
                         <line x1="10" y1="14" x2="21" y2="3"></line>
