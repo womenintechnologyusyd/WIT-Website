@@ -16,7 +16,7 @@ body {
 
     /* Additions for the footer */
     position: relative;
-    padding-bottom: 200px;  
+    padding-bottom: 230px;  
 }
 
 h1 {
@@ -58,7 +58,7 @@ footer {
     padding: 20px;
     background-color: rgb(105, 36, 137);
     color: black;
-    height: 200px; 
+    height: 230px; 
 }
 
 .profile {
