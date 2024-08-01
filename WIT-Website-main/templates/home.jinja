@@ -1,7 +1,7 @@
 {% extends 'top.jinja' %}
 
 {% block content %} 
-    <br><h1>HOMEPAGE</h1>
+    <h1>HOMEPAGE</h1>
 
     <!-- Mission Statement -->
     <div class="many_center">
@@ -12,15 +12,17 @@
     <br><br><br> 
 
     <!-- SlideShow -->
-    <div class="slider">
-        <img id="img-1" src="/static/images/temp1.jpeg" alt="Image 1"/>
-        <img id="img-2" src="/static/images/temp2.jpeg" alt="Image 2"/>
-        <img id="img-3" src="/static/images/temp3.jpg" alt="Image 3"/>
-    </div>
-    <div class="navigation-button">
-        <span class="dot" onclick="changeSlide(0)"></span>
-        <span class="dot" onclick="changeSlide(1)"></span>
-        <span class="dot" onclick="changeSlide(2)"></span>
+    <div class="slideshow_wrapper">
+        <div class="slider">
+            <img id="img-1" src="/static/images/temp1.png" alt="Image 1"/>
+            <img id="img-2" src="/static/images/temp2.png" alt="Image 2"/>
+            <img id="img-3" src="/static/images/temp3.png" alt="Image 3"/>
+        </div>
+        <div class="navigation-button">
+            <span class="dot" onclick="changeSlide(0)"></span>
+            <span class="dot" onclick="changeSlide(1)"></span>
+            <span class="dot" onclick="changeSlide(2)"></span>
+        </div>
     </div>
 
     <script src="/static/js/libs/main.js"></script>
