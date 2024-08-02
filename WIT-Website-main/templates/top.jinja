@@ -85,7 +85,7 @@
 
 
         .dropdown {
-            top:20px;
+            top:25px;
             right: 40px;
             position: absolute;
             display: none;
@@ -114,6 +114,7 @@
         @media screen and (max-width: 900px) {
             #menu {display:none;}
             .dropdown {display: inline-block;}
+            .page-link:hover { padding-bottom: 10px;}
         }
 
 
@@ -145,15 +146,15 @@
     </nav>   
 
     <div class="dropdown">
-        <img onclick="collapseNav()" class="dropbtn" src="/static/images/dropdown_icon.png" alt="Dropdown" style="height:40px"/>
-        
+        <img onclick="collapseNav()" class="dropbtn" src="/static/images/dropdown_icon.png" alt="Dropdown" style="height:30px"/>
+         
         <div id="myDropdown" class="dropdown-content">
             <a href={{ url_for('aboutus') }} class="page-link">About Us</a>
             <a href={{ url_for('events') }} class="page-link">Events</a>
             <a href={{ url_for('sponsors') }} class="page-link">Sponsors</a>
             <a href={{ url_for('publications') }} class="page-link">Publications</a>
             <a href={{ url_for('contactus') }} class="page-link">Contact Us</a>
-            <a href="https://usu.edu.au/clubs/women-in-technology/" target="_blank">Join Us</a> 
+            <a href="https://usu.edu.au/clubs/women-in-technology/" target="_blank" class="page-link">Join Us</a> 
         </div>
     </div>
 
