@@ -46,3 +46,5 @@ if (!event.target.matches('.dropbtn')) {
     }
 }
 }
+
+// SLIDE
