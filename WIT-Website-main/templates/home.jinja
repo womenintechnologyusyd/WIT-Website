@@ -1,77 +1,177 @@
 {% extends 'top.jinja' %}
 
 {% block content %} 
-    <h1>HOMEPAGE</h1>
 
-    <!-- Mission Statement -->
-    <div class="many_center">
-        <img img id="mascot_design" alt="Floral WIT Design" src="/static/images/Flower.png" width="400px">
-        <p><b>OUR MISSION IS .............................................................................</b></p>
-    </div>
-   
-    <br><br><br> 
+    <style>
 
-    <!-- SlideShow -->
-    <div class="slideshow_wrapper">
-        <div class="slider">
-            <img id="img-1" src="/static/images/temp1.png" alt="Image 1"/>
-            <img id="img-2" src="/static/images/temp2.png" alt="Image 2"/>
-            <img id="img-3" src="/static/images/temp3.png" alt="Image 3"/>
+    .gradient-background {
+        position: relative;
+        background: linear-gradient(120deg, #7A1F8D, #C991D1, #7A1F8D);
+        background-size: 400% 400%;
+        animation: gradient-movement 20s ease infinite;
+        overflow: hidden; /* Ensures animated elements don't overflow */
+        padding: 60px; /* Adjust padding as needed */
+        color: white;
+        border-radius: 0;
+    }
+
+    @keyframes gradient-movement {
+        0% {
+            background-position: 0% 50%;
+        }
+        25% {
+            background-position: 50% 100%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        75% {
+            background-position: 50% 0%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .gradient-background::before, .gradient-background::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+        animation: swirl 10s ease-in-out infinite alternate both, scale 15s ease-in-out infinite;
+        pointer-events: none;
+        mix-blend-mode: overlay;
+    }
+
+    .gradient-background::after {
+        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 50%);
+        animation: swirl 8s linear infinite alternate both, scale 20s ease-in-out infinite reverse;
+    }
+
+    @keyframes swirl {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.5);
+        }
+    }
+
+    #homepage-banner {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0; /* Remove padding to avoid gaps */
+        margin: 0; /* Remove margin to avoid gaps */
+        min-height: 500px; /* Ensure there's enough height for the effect */
+    }
+
+    #homepage-banner-wrapper {
+        text-align: center;
+        max-width: 750px;
+        width: 100%;
+        z-index: 1; /* Ensure content is above the background */
+    }
+
+    .title {
+        font-size: 7rem; /* Large font size for the title */
+        font-weight: 1000; /* Bold font weight for emphasis */
+        letter-spacing: -1px; /* Slightly condense the letter spacing */
+        margin: 0;
+        text-align: center;
+        color: white;
+    }
+
+    .subtitle {
+        font-size: 1.25rem; /* Smaller font size for the subtitle */
+        font-weight: 400; /* Regular font weight */
+        line-height: 1.5; /* Comfortable line height */
+        letter-spacing: 0.5px; /* Slightly increase letter spacing */
+        margin-top: 1rem;
+        text-align: center;
+        color: white;
+    }
+
+    /* New Section Styles */
+    .content-section {
+        background-color: #f5f5f5; /* Light grey background */
+        padding: 60px 0; /* Padding for the section */
+    }
+
+    .content-container {
+        max-width: 1300px;
+        margin: 0 auto; /* Center the content */
+        padding: 0 20px; /* Padding for mobile responsiveness */
+    }
+
+    .content-box {
+        background-color: white;
+        border-radius: 15px; /* Rounded corners */
+        padding: 60px;
+        margin-bottom: 40px; /* Spacing between boxes */
+        text-align: center;
+    }
+
+    .large {
+        font-size: 3rem
+    }
+
+    </style>
+
+    <div id="homepage-banner" class="gradient-background">
+        <div id="homepage-banner-wrapper">
+            <h1 class="title">Hello World</h1>
+            <p class="subtitle">We are Women in Technology at The University of Sydney.
+            Join us in empowering female students entering the tech industry. Our members 
+            get ahead by building their professional networks, sharpening their technical 
+            skills, and connecting with like-minded peers.</p>
         </div>
-        <div class="navigation-button">
-            <span class="dot" onclick="changeSlide(0)"></span>
-            <span class="dot" onclick="changeSlide(1)"></span>
-            <span class="dot" onclick="changeSlide(2)"></span>
-        </div>
     </div>
 
-    <script src="/static/js/libs/main.js"></script>
-
-    <br><br><br> 
-
-    <!-- Socials -->
-    <h2>Follow Our Socials!</h2><br><br> 
-    <div class="many_center">
-        <a href="https://www.linkedin.com/company/witusyd/" target="_blank">
-            <img img id="Linkedin" alt="LinkedIn Logo" src="/static/images/linkedin.png" width="100px">
-        </a>     
-        <a href="https://www.instagram.com/witusyd/" target="_blank">
-            <img img id="Instagram" alt="Instagram Logo" src="/static/images/insta.png" width="100px">
-        </a>   
-        <a href="https://www.facebook.com/witusyd" target="_blank">
-            <img img id="Facebook" alt="Facebook Logo" src="/static/images/facebook.png" width="100px">
-        </a>    
-    </div>
-
-    <br><br><br> 
-
-    <!-- Sponsors -->
-    <section id="home_sponsor">
-        <h1>Sponsors</h1>
-        <div class="many_center">
-            <a href="https://www.atlassian.com/" target="_blank">
-                <img img id="sponsor1" alt="Atlassian Logo" src="/static/images/Atlassian_logo.png" width="250px">
-            </a>
-            <a href="http://e-lead.com.au/" target="_blank">
-                <img img id="sponsor4" alt="E-Lead Logo" src="/static/images/Elead_logo.png" width="250px">
-            </a> 
-            <a href="https://www.janestreet.com/" target="_blank">
-                <img img id="sponsor3" alt="JaneStreet Logo" src="/static/images/JaneStreet_logo.png" width="250px">
-            </a>
-        </div>
-        <div class="many_center">
-            <a href="https://www.rabobank.com.au/" target="_blank">
-                <img img id="sponsor4" alt="Rabobank Logo" src="/static/images/rabobank.png" width="300px">
-            </a>    
-            <a href="https://www.recordpoint.com/" target="_blank">
-                <img img id="sponsor5" alt="RecordPoint Logo" src="/static/images/recordpoint.png" width="300px">
-            </a> 
+    <!-- New Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="content-box">
+                <h2 class="large">Don't miss out!</h2>
+                <div class="slideshow_wrapper">
+                    <div class="slider">
+                        <img id="img-1" src="/static/images/temp1.png" alt="Image 1"/>
+                        <img id="img-2" src="/static/images/temp2.png" alt="Image 2"/>
+                        <img id="img-3" src="/static/images/temp3.png" alt="Image 3"/>
+                    </div>
+                    <div class="navigation-button">
+                        <span class="dot" onclick="changeSlide(0)"></span>
+                        <span class="dot" onclick="changeSlide(1)"></span>
+                        <span class="dot" onclick="changeSlide(2)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-box">
+                <h2 class="large">Follow our socials</h2>
+                <p>This is another section of content. Use this space for more details.</p>
+            </div>
+            <div class="content-box">
+                <h2 class="large">Check out our sponsors</h2>
+                <p>This is a third section of content. Customize as needed.</p>
+            </div>
         </div>
     </section>
 
     <footer>  
         {% include "footer.jinja" %}
     </footer>
-
 
 {% endblock %}
