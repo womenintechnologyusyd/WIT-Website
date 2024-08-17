@@ -5,7 +5,7 @@
 <style>
 /* Style for the top banner */
 .top-banner {
-    background-color: #7A1F8D; /* Light gray background */
+    background-color: #7A1F8D; /* Purple background */
     padding: 50px 20px;
     display: flex;
     justify-content: center;
@@ -26,7 +26,7 @@
     flex: 1;
     font-size: 4rem;
     font-weight: bold;
-    color: white    ;
+    color: white;
 }
 
 /* Caption styling */
@@ -38,11 +38,23 @@
     color: white;
 }
 
-/* General styling for the content section */
-.content-section {
+/* Grey margin container */
+.grey-margin-container {
+    background-color: #f2f2f2; /* Light grey background for the margin */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Full white content wrapper */
+.full-white-container {
+    background-color: white; /* White background */
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* General styling for the content section */
+.content-section {
     line-height: 1.6;
     font-size: 1.1em;
     color: #444;
@@ -74,6 +86,17 @@
     margin-bottom: 15px;
 }
 
+/* Remove margin or padding from the last element */
+.full-white-container, .grey-margin-container {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Ensure no margin at the top of the footer */
+footer {
+    margin-top: 0;
+    padding-top: 0;
+}
 </style>
 
 <div class="top-banner">
@@ -85,33 +108,39 @@
     </div>
 </div>
 
-<div class="content-section">
-<p>Women in Technology USYD (WIT) is committed to celebrating diversity, promoting
+<!-- Grey margin container -->
+<div class="grey-margin-container">
+    <!-- Full white content wrapper -->
+    <div class="full-white-container">
+        <div class="content-section">
+            <p>Women in Technology USYD (WIT) is committed to celebrating diversity, promoting
                 equality, and nurturing the growth and achievement of women in STEM fields.
                 With a vibrant and enthusiastic community, we are dedicated to creating a
                 hopeful and inclusive future for women in these fields.</p>
-    <p>Our events aim to offer educational, networking, and social incentives for
-        WIT members and our sponsors. We prioritize engagement and interaction
-        between participants and sponsors, and welcome suggestions for customised
-        events that meet sponsors' specific needs. These events may be held on campus
-        at USYD or at the sponsor's office. Hosting tailored initiatives can have a lasting
-        impact on participants, increasing the visibility of our sponsors.
-    </p>
-</div>
-
-<h1>MEET THE EXECUTIVES!</h1>
-
-<div class="row">
-    <div class="card">
-        <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="100px">
-        <div class="container">
-            <h4><b>NAME</b></h4>
-            <h4><b>POSITION</b></h4>
+            <p>Our events aim to offer educational, networking, and social incentives for
+                WIT members and our sponsors. We prioritize engagement and interaction
+                between participants and sponsors, and welcome suggestions for customised
+                events that meet sponsors' specific needs. These events may be held on campus
+                at USYD or at the sponsor's office. Hosting tailored initiatives can have a lasting
+                impact on participants, increasing the visibility of our sponsors.
+            </p>
         </div>
-    </div>
 
-    <!-- Repeat for other executive cards -->
-</div>
+        <h1>MEET THE EXECUTIVES!</h1>
+
+        <div class="row">
+            <div class="card">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="100px">
+                <div class="container">
+                    <h4><b>NAME</b></h4>
+                    <h4><b>POSITION</b></h4>
+                </div>
+            </div>
+
+            <!-- Repeat for other executive cards -->
+        </div>
+    </div> <!-- End of full white content wrapper -->
+</div> <!-- End of grey margin container -->
 
 <footer>  
     {% include "footer.jinja" %}
