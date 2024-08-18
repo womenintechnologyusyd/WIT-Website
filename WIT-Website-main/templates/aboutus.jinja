@@ -60,18 +60,19 @@
     color: #444;
 }
 
-/* Style for the cards (executive profiles) */
+
+/* Style for the cards (executive profiles) 
 .card {
     width: 30%;
     margin: 15px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
     text-align: center;
     padding: 20px;
 }
 
-/* Container for the cards */
+/* Container for the cards 
 .row {
     display: flex;
     justify-content: space-around;
@@ -80,12 +81,35 @@
     max-width: 1200px;
 }
 
-/* Image inside the cards */
+/* Image inside the cards 
 .card img {
     border-radius: 50%;
     margin-bottom: 15px;
 }
+*/
 
+.row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.profile {
+    flex: 33.33%;
+    padding: 5px;
+    text-align: center;
+}
+
+.name {
+      font-size: 15px;
+}
+
+.title {
+      font-size: 13px;
+      color: #7A1F8D;
+}
 /* Remove margin or padding from the last element */
 .full-white-container, .grey-margin-container {
     padding-bottom: 0;
@@ -126,19 +150,108 @@ footer {
             </p>
         </div>
 
-        <h1>MEET THE EXECUTIVES!</h1>
+        <h1 style="text-align:center">MEET THE EXECUTIVES!</h1><br>
 
-        <div class="row">
-            <div class="card">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="100px">
-                <div class="container">
-                    <h4><b>NAME</b></h4>
-                    <h4><b>POSITION</b></h4>
+        <!-- Row of Exec Profiles -->
+        <div class="row" style="margin-bottom:40px;">
+            <div class="profile">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="150px">
+                <div >
+                    <div class="'name"><b>Miesha Binta Noor</b></div>
+                    <div class="title"><b>President</b></div>
                 </div>
             </div>
-
-            <!-- Repeat for other executive cards -->
+            <div class="profile">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="150px">
+                <div class="container">
+                    <div class="'name"><b>Selina Nguyen Tran</b></div>
+                    <div class="title"><b>Vice President</b></div>
+                </div>
+            </div>
+            <div class="profile">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="150px">
+                <div class="container">
+                    <div class="'name"><b>Aubrey Lim</b></div>
+                    <div class="title"><b>Vice President</b></div>
+                </div>
+            </div>
         </div>
+
+        <!-- Row of Exec Profiles -->
+        <div class="row" style="margin-bottom:40px;">
+            <div class="profile">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="150px">
+                <div >
+                    <div class="'name"><b>Cindy Nguyen</b></div>
+                    <div class="title"><b>Secretary</b></div>
+                </div>
+            </div>
+            <div class="profile">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="150px">
+                <div class="container">
+                    <div class="'name"><b>Selina Thai</b></div>
+                    <div class="title"><b>Treasurer</b></div>
+                </div>
+            </div>
+            <div class="profile">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="150px">
+                <div class="container">
+                    <div class="'name"><b>Linda Chen</b></div>
+                    <div class="title"><b>Sponsorship Director</b></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row of Exec Profiles -->
+        <div class="row" style="margin-bottom:40px;">
+            <div class="profile">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="150px">
+                <div class="container">    
+                    <div class="'name"><b>Arielle Gravning</b></div>
+                    <div class="title"><b>Publications Director</b></div>
+                </div>
+            </div>
+            <div class="profile">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="150px">
+                <div class="container">
+                    <div class="'name"><b>Rayna Lamack</b></div>
+                    <div class="title"><b>Events Director</b></div>
+                </div>
+            </div>
+            <div class="profile">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="150px">
+                <div class="container">
+                    <div class="'name"><b>Ava Regoli</b></div>
+                    <div class="title"><b>Events Director</b></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row of Exec Profiles -->
+        <div class="row" style="margin-bottom:40px;">
+            <div class="profile">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="150px">
+                <div >
+                    <div class="'name"><b>Yastika Choure</b></div>
+                    <div class="title"><b>Marketing Director</b></div>
+                </div>
+            </div>
+            <div class="profile">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="150px">
+                <div class="container">
+                    <div class="'name"><b>Amelia Griffin</b></div>
+                    <div class="title"><b>External Director</b></div>
+                </div>
+            </div>
+            <div class="profile">
+                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/Portrait_Placeholder.png" width="150px">
+                <div class="container">
+                    <div class="'name"><b>Xin Lin</b></div>
+                    <div class="title"><b>External Director</b></div>
+                </div>
+            </div>
+        </div>
+
     </div> <!-- End of full white content wrapper -->
 </div> <!-- End of grey margin container -->
 
