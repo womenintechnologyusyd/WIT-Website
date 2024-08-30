@@ -1,24 +1,43 @@
-    <br>
-<div class="many_center">
-    <a href ={{ url_for('index') }}>
-        <img img id="WITlogo" alt="WIT Logo" src="/static/images/wit_logo_white.png" width="250px">
-    </a>
+<style>
 
-    <a href ={{ url_for('contactus') }}>Contact Us</a>
+    footer {
+        display: flex;
+        align-items: center; /* Centers the content vertically */
+        width: 100%;
+        background-color: #7A1F8D;
+        color: white;
+        height: 200px; 
+    }
 
-    <div class="footer_socials">
-        <p>Follow our socials</p><br>
-        <a href="https://www.linkedin.com/company/witusyd/">
-            <img img id="socials" alt="LinkedIn Logo" src="/static/images/linkedin.png" width="40px">
-        </a>     
-        <a href="https://www.instagram.com/witusyd/">
-            <img img id="socials" alt="Instagram Logo" src="/static/images/insta.png" width="40px">
-        </a>   
-        <a href="https://www.facebook.com/witusyd">
-            <img img id="socials" alt="Facebook Logo" src="/static/images/facebook.png" width="40px">
-        </a>  
+    #footer-wrapper {
+        margin: 0 60px;
+        display: flex;
+        flex-direction: column; /* Arrange items vertically */
+        gap: 25px; /* Adjust this value to change the vertical gap */
+    }
+
+    #footer-main-content {
+        display: flex;
+        flex-direction: column; /* Arrange items vertically */
+        gap: 5px; /* Adjust this value to change the vertical gap */
+    }
+
+</style>
+
+<div id="footer-wrapper">
+    <div id="footer-main-content">
+        <img img src="/static/images/wit_logo_white.png" width="100px">
+        <div class="social-media"> 
+            <a href="https://www.instagram.com/witusyd/" target="_blank">
+                <img img alt="Instagram Logo" src="/static/images/instagram-logo.png" width="35px">
+            </a>   
+            <a href="https://www.facebook.com/witusyd" target="_blank">
+                <img img alt="Facebook Logo" src="/static/images/facebook-logo.png" width="35px">
+            </a>
+            <a href="https://www.linkedin.com/company/witusyd/" target="_blank">
+                <img img alt="LinkedIn Logo" src="/static/images/linkedin-logo.png" width="35px">
+            </a>
+        </div>
     </div>
-
+    <small> Developed by Arielle Gravning, Cindy Nguyen and Selina Thai </small>
 </div>
-
-<p> Developed by Arielle Gravning, Cindy Nguyen and Selina Thai. </p>

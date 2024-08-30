@@ -4,7 +4,7 @@
     <style>
 
         :root {
-            --dark-purple: rgb(105, 36, 137);  /* Default WIT dark purple */
+            --dark-purple: #7A1F8D;  /* Default WIT dark purple */
             --darker-purple: rgb(85, 28, 111);  /* Darker purple for hovering */
             --menu-gap: 30px; /* Gap between About Us, Events, etc.*/
         }
@@ -48,20 +48,33 @@
             gap: var(--menu-gap); /* Inserts a gap between children */
         }
 
-        /* Page links include About Us, Events, Sponsors, Publications and Contact Us */
-        .page-link {
-            display: flex;
-            height: 100%;
-            align-items: center;
-            padding-bottom: 3px; /* Add padding to compensate for purple border */
-            color: black;
-            text-decoration: none;
-        }
+/* Page links include About Us, Events, Sponsors, Publications, and Contact Us */
+.page-link {
+    display: inline-flex; /* Inline-flex keeps it inline with text but allows flexbox properties */
+    align-items: center;
+    position: relative;
+    color: black;
+    text-decoration: none;
+    padding: 0 5px; /* Optional padding to create space around the text */
+}
 
-        .page-link:hover {
-            border-bottom: 3px solid var(--dark-purple);
-            padding-bottom: 0; /* Remove the padding when purple border is added */
-        }
+.page-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Adjust thickness here */
+    background-color: var(--dark-purple); /* Dark purple underline */
+    left: 50%;
+    bottom: +22px; /* Adjust to position underline directly beneath text */
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.page-link:hover::after {
+    width: 90%; /* Full width on hover */
+}
+
+
 
         /* Join Us button*/
         #join-button {
