@@ -485,3 +485,43 @@ a {
           transition-delay: .3s;
 
 }
+
+/* events page */
+.mySlides {
+  cursor: pointer;
+}
+
+.dots {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.right-arrow {
+  cursor:pointer;
+  display:inline-block;
+  margin-top: -50px;
+
+
+}
+
+.left-arrow {
+  cursor:pointer;
+  display:inline-block;
+  margin-right:100px;
+
+}
+
+.event-banner{
+  margin: auto;
+  width: 100%;
+  cursor:pointer;
+  margin-bottom: 2em; 
+  margin-top: 2em;
+}
+
