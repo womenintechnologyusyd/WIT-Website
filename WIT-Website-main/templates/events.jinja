@@ -2,22 +2,32 @@
 
 {% block content %} 
     <meta name="viewport" content="width=device-width, initial-scale=1">
- 
+
     <style>
-    .mySlides {display:none;margin:auto;}
-    .w3-left, .w3-right, .w3-badge {cursor:pointer}
-    .w3-badge {height:13px;width:13px;padding:0}
-    
+        hr {
+            clear:both;
+            display:block;
+            width: 70%;               
+            background-color: lightgray;
+            height: 1px;
+            margin: 30px 0 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
+
+
+ 
+
 
     <body>
     <section>
     
         <div class="w3-container">
-            <h2>Upcoming Events</h2>
+            <h1>UPCOMING EVENTS!</h1>
         </div>
 
-        <div class="w3-content w3-display-container" style="max-width:900px">
+        <div class="event-banner" style="max-width:1500px">
 
             <button onclick="alert('Register through this link!')">
                 <img class="mySlides" src="/static/images/temp1.png" alt="Clickable Image" style="width:100%">
@@ -31,64 +41,64 @@
                 <img class="mySlides" src="/static/images/temp3.png" alt="Clickable Image" style="width:100%">
             </button>
               
-            <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+            <div style="text-align:center">
+                <span class="dots" onclick="currentDiv(1)"></span>
+                <span class="dots" onclick="currentDiv(2)"></span>
+                <span class="dots" onclick="currentDiv(3)"></span>
+
             </div>
             
         </div>
 
     </section>
 
+  <h1>PAST EVENTS!</h1>
 
-  <h2>Past Events</h2>
-  <h3>2024</h3>
-  <hr width="100%" size="2">
-
+  <h2>2024</h2>
+  <hr>
   
-
 
 <section class="cards-wrapper">
   <div class="card-grid-space">
-    <a class="card" href="https://codetheweb.blog/2017/10/06/html-syntax/" style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg)">
+    <a class="card" style="--bg-img: url(/static/images/temp1.png)">
       <div>
         <h1>Event 1</h1>
         <p>The syntax of a language is how it works. How to actually write it. Learn HTML syntax…</p>
         <div class="date">6 Oct 2017</div>
         <div class="tags">
-          <div class="tag">HTML</div>
+          <div class="tag">SPONSORS</div>
+          <div class="tag">SPONSORS</div>
         </div>
       </div>
     </a>
   </div>
+
+
+
   <div class="card-grid-space">
-    <a class="card" href="https://codetheweb.blog/2017/10/09/basic-types-of-html-tags/" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/basic-types-of-html-tags/cover.jpg')">
+    <a class="card" style="--bg-img: url(/static/images/temp2.png)">
       <div>
         <h1>Event 2</h1>
         <p>Learn about some of the most common HTML tags…</p>
         <div class="date">9 Oct 2017</div>
         <div class="tags">
-          <div class="tag">HTML</div>
+          <div class="tag">SPONSORS</div>
         </div>
       </div>
     </a>
   </div>
   <div class="card-grid-space">
-    <a class="card" href="https://codetheweb.blog/2017/10/14/links-images-about-file-paths/" style="--bg-img: url('https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/links-images-about-file-paths/cover.jpg')">
+    <a class="card" style="--bg-img: url(/static/images/temp1.png)">
       <div>
         <h1>Event 3</h1>
         <p>Learn how to use links and images along with file paths…</p>
         <div class="date">14 Oct 2017</div>
         <div class="tags">
-          <div class="tag">HTML</div>
+          <div class="tag">SPONSORS</div>
         </div>
       </div>
     </a>
   </div>
-  <!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
 </section>
     
 
@@ -121,6 +131,8 @@
     x[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " w3-white";
     }
+
+  
     </script>
     </body>
 
