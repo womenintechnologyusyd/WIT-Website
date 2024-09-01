@@ -1,150 +1,232 @@
 {% extends 'top.jinja' %}
 
 {% block content %} 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        hr {
-            clear:both;
-            display:block;
-            width: 70%;               
-            background-color: lightgray;
-            height: 1px;
-            margin: 30px 0 30px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    </style>
+<style>
+.gradient-background {
+    position: relative;
+    background: linear-gradient(120deg, #7A1F8D, #C991D1, #7A1F8D);
+    background-size: 400% 400%;
+    animation: gradient-movement 20s ease infinite;
+    overflow: hidden; /* Ensures animated elements don't overflow */
+    padding: 60px; /* Adjust padding as needed */
+    color: white;
+    border-radius: 0;
+}
 
+@keyframes gradient-movement {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 100%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 0%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
- 
+.gradient-background::before, .gradient-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+    animation: swirl 10s ease-in-out infinite alternate both, scale 15s ease-in-out infinite;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
 
+.gradient-background::after {
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 50%);
+    animation: swirl 8s linear infinite alternate both, scale 20s ease-in-out infinite reverse;
+}
 
-    <body>
-    <section>
-    
-        <div class="w3-container">
-            <h1>UPCOMING EVENTS!</h1>
-        </div>
+@keyframes swirl {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
-        <div class="event-banner" style="max-width:1500px">
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
 
-            <button onclick="alert('Register through this link!')">
-                <img class="mySlides" src="/static/images/temp1.png" alt="Clickable Image" style="width:100%">
-            </button>
+#homepage-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Remove padding to avoid gaps */
+    margin: 0; /* Remove margin to avoid gaps */
+    min-height: 500px; /* Ensure there's enough height for the effect */
+}
 
-            <button onclick="alert('Register through this link!')">
-                <img class="mySlides" src="/static/images/temp2.png" alt="Clickable Image" style="width:100%">
-            </button>
+#homepage-banner-wrapper {
+    text-align: center;
+    max-width: 750px;
+    width: 100%;
+    z-index: 1; /* Ensure content is above the background */
+}
 
-            <button onclick="alert('Register through this link!')">
-                <img class="mySlides" src="/static/images/temp3.png" alt="Clickable Image" style="width:100%">
-            </button>
-              
-            <div style="text-align:center">
-                <span class="dots" onclick="currentDiv(1)"></span>
-                <span class="dots" onclick="currentDiv(2)"></span>
-                <span class="dots" onclick="currentDiv(3)"></span>
+.title {
+    font-size: 7rem; /* Large font size for the title */
+    font-weight: 1000; /* Bold font weight for emphasis */
+    letter-spacing: -1px; /* Slightly condense the letter spacing */
+    margin: 0;
+    text-align: center;
+    color: white;
+}
 
+.subtitle {
+    font-size: 1.25rem; /* Smaller font size for the subtitle */
+    font-weight: 400; /* Regular font weight */
+    line-height: 1.5; /* Comfortable line height */
+    letter-spacing: 0.5px; /* Slightly increase letter spacing */
+    margin-top: 1rem;
+    text-align: center;
+    color: white;
+}
+
+/* New Section Styles */
+.content-section {
+    background-color: #f5f5f5; /* Light grey background */
+    padding: 60px 0; /* Padding for the section */
+}
+
+.content-container {
+    max-width: 1300px;
+    margin: 0 auto; /* Center the content */
+    padding: 0 20px; /* Padding for mobile responsiveness */
+}
+
+.content-box {
+    background-color: white;
+    border-radius: 15px; /* Rounded corners */
+    padding: 60px;
+    margin-bottom: 40px; /* Spacing between boxes */
+    text-align: center;
+}
+
+.large {
+    font-size: 3rem
+}
+
+.slideshow_wrapper {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    max-width: 100%;
+    display: none;
+}
+
+.slider img.active {
+    display: block;
+}
+
+.navigation-button {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.navigation-button .dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navigation-button .dot.active {
+    background-color: #333;
+}
+</style>
+
+<div id="homepage-banner" class="gradient-background">
+    <div id="homepage-banner-wrapper">
+        <h1 class="title">Hello World</h1>
+        <p class="subtitle">We are <b>Women in Technology</b> at The University of Sydney.
+        Join us in empowering female students entering the tech industry. Our members 
+        get ahead by building their professional networks, sharpening their technical 
+        skills, and connecting with like-minded peers.</p>
+    </div>
+</div>
+
+<!-- New Section -->
+<section class="content-section">
+    <div class="content-container">
+        <div class="content-box">
+            <h2 class="large">Don't miss out!</h2>
+            <div class="slideshow_wrapper">
+                <div class="slider">
+                    <img id="img-1" src="/static/images/temp1.png" alt="Image 1" class="active"/>
+                    <img id="img-2" src="/static/images/temp2.png" alt="Image 2"/>
+                    <img id="img-3" src="/static/images/temp3.png" alt="Image 3"/>
+                </div>
+                <div class="navigation-button">
+                    <span class="dot active" onclick="changeSlide(0)"></span>
+                    <span class="dot" onclick="changeSlide(1)"></span>
+                    <span class="dot" onclick="changeSlide(2)"></span>
+                </div>
             </div>
-            
         </div>
-
-    </section>
-
-  <h1>PAST EVENTS!</h1>
-
-  <h2>2024</h2>
-  <hr>
-  
-
-<section class="cards-wrapper">
-  <div class="card-grid-space">
-    <a class="card" style="--bg-img: url(/static/images/temp1.png)">
-      <div>
-        <h1>Event 1</h1>
-        <p>The syntax of a language is how it works. How to actually write it. Learn HTML syntax…</p>
-        <div class="date">6 Oct 2017</div>
-        <div class="tags">
-          <div class="tag">SPONSORS</div>
-          <div class="tag">SPONSORS</div>
+        <div class="content-box">
+            <h2 class="large">Follow our socials</h2>
+            <p>This is another section of content. Use this space for more details.</p>
         </div>
-      </div>
-    </a>
-  </div>
-
-
-
-  <div class="card-grid-space">
-    <a class="card" style="--bg-img: url(/static/images/temp2.png)">
-      <div>
-        <h1>Event 2</h1>
-        <p>Learn about some of the most common HTML tags…</p>
-        <div class="date">9 Oct 2017</div>
-        <div class="tags">
-          <div class="tag">SPONSORS</div>
+        <div class="content-box">
+            <h2 class="large">Check out our sponsors</h2>
+            <p>This is a third section of content. Customize as needed.</p>
         </div>
-      </div>
-    </a>
-  </div>
-  <div class="card-grid-space">
-    <a class="card" style="--bg-img: url(/static/images/temp1.png)">
-      <div>
-        <h1>Event 3</h1>
-        <p>Learn how to use links and images along with file paths…</p>
-        <div class="date">14 Oct 2017</div>
-        <div class="tags">
-          <div class="tag">SPONSORS</div>
-        </div>
-      </div>
-    </a>
-  </div>
+    </div>
 </section>
-    
 
-    
+<footer>  
+    {% include "footer.jinja" %}
+</footer>
 
-    <script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slider img');
+const dots = document.querySelectorAll('.navigation-button .dot');
 
-    function plusDivs(n) {
-    showDivs(slideIndex += n);
-    }
+function changeSlide(slideIndex) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
 
-    function currentDiv(n) {
-    showDivs(slideIndex = n);
-    }
+    currentSlide = slideIndex;
 
-    function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length}
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";  
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" w3-white", "");
-    }
-    x[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " w3-white";
-    }
-
-  
-    </script>
-    </body>
-
-  
-
-
-    <footer>  
-        {% include "footer.jinja" %}
-    </footer>
-
-
-
-
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
+</script>
 
 {% endblock %}
