@@ -1,89 +1,146 @@
 {% extends 'top.jinja' %}
 
 {% block content %} 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
-        /* New Section Styles */
-        .content-section {
-            background-color: #f5f5f5; /* Light grey background */
-            padding: 60px 0; /* Padding for the section */
+        hr {
+            clear:both;
+            display:block;
+            width: 70%;               
+            background-color: lightgray;
+            height: 1px;
+            margin: 30px 0 30px;
+            margin-left: auto;
+            margin-right: auto;
         }
-
-        .content-container {
-            max-width: 1300px;
-            margin: 0 auto; /* Center the content */
-            padding: 0 20px; /* Padding for mobile responsiveness */
-        }
-
-        .content-box {
-            background-color: white;
-            border-radius: 15px; /* Rounded corners */
-            padding: 60px;
-            margin-bottom: 40px; /* Spacing between boxes */
-            text-align: center;
-        }
-
-        .large {
-            font-size: 3rem
-        }
-
-        /* Style for the top banner */
-            .top-banner {
-                background-color: #7A1F8D; /* Purple background */
-                padding: 50px 40px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 100px;
-            }
-
-            /* Content inside the banner */
-            .banner-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                width: 100%;
-            }
-
-            /* Title styling */
-            .banner-content .title {
-                flex: 1;
-                font-size: 4rem;
-                font-weight: bold;
-                color: white;
-            }
-
-            /* Caption styling */
-            .banner-content .caption {
-                flex: 1;
-                text-align: right;
-                font-size: 1.5em;
-                line-height: 1.6;
-                color: white;
-                margin-right: 20px;
-            }
-
     </style>
 
 
-    <div class="top-banner">
-            <div class="banner-content">
-                <h1 class="title"> Events</h1>
-                <div class="caption">
-                    View upcoming and past events.
-                </div>
+ 
+    <body>
+    <section>
+    
+        <div class="w3-container">
+            <h1>UPCOMING EVENTS!</h1>
+        </div>
+
+        <div class="event-banner" style="max-width:1500px">
+
+            <button onclick="alert('Register through this link!')">
+                <img class="mySlides" src="/static/images/temp1.png" alt="Clickable Image" style="width:100%">
+            </button>
+
+            <button onclick="alert('Register through this link!')">
+                <img class="mySlides" src="/static/images/temp2.png" alt="Clickable Image" style="width:100%">
+            </button>
+
+            <button onclick="alert('Register through this link!')">
+                <img class="mySlides" src="/static/images/temp3.png" alt="Clickable Image" style="width:100%">
+            </button>
+              
+            <div style="text-align:center">
+                <span class="dots" onclick="currentDiv(1)"></span>
+                <span class="dots" onclick="currentDiv(2)"></span>
+                <span class="dots" onclick="currentDiv(3)"></span>
+
             </div>
-    </div>
+            
+        </div>
+
+    </section>
+
+  <h1>PAST EVENTS!</h1>
+
+  <h2>2024</h2>
+  <hr>
+  
+
+<section class="cards-wrapper">
+  <div class="card-grid-space">
+    <a class="card" style="--bg-img: url(/static/images/temp1.png)">
+      <div>
+        <h1>Event 1</h1>
+        <p>The syntax of a language is how it works. How to actually write it. Learn HTML syntax…</p>
+        <div class="date">6 Oct 2017</div>
+        <div class="tags">
+          <div class="tag">SPONSORS</div>
+          <div class="tag">SPONSORS</div>
+        </div>
+      </div>
+    </a>
+  </div>
 
 
-    <div class="content-box" style="margin-bottom:300px">
-        <h1>This page is still under development.</h1>
-        <p>Thank you for your patience.</p>
-    </div>
+
+  <div class="card-grid-space">
+    <a class="card" style="--bg-img: url(/static/images/temp2.png)">
+      <div>
+        <h1>Event 2</h1>
+        <p>Learn about some of the most common HTML tags…</p>
+        <div class="date">9 Oct 2017</div>
+        <div class="tags">
+          <div class="tag">SPONSORS</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="card-grid-space">
+    <a class="card" style="--bg-img: url(/static/images/temp1.png)">
+      <div>
+        <h1>Event 3</h1>
+        <p>Learn how to use links and images along with file paths…</p>
+        <div class="date">14 Oct 2017</div>
+        <div class="tags">
+          <div class="tag">SPONSORS</div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+    
+
+    <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+    showDivs(slideIndex += n);
+    }
+
+    function currentDiv(n) {
+    showDivs(slideIndex = n);
+    }
+
+    function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" w3-white", "");
+    }
+    x[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " w3-white";
+    }
+
+  
+    </script>
+    </body>
+
+  
 
 
     <footer>  
         {% include "footer.jinja" %}
     </footer>
+
+
+
+
 
 {% endblock %}
