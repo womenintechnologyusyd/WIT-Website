@@ -2,231 +2,88 @@
 
 {% block content %} 
 
-<style>
-    .gradient-background {
-        position: relative;
-        background: linear-gradient(120deg, #7A1F8D, #C991D1, #7A1F8D);
-        background-size: 400% 400%;
-        animation: gradient-movement 20s ease infinite;
-        overflow: hidden; /* Ensures animated elements don't overflow */
-        padding: 60px; /* Adjust padding as needed */
-        color: white;
-        border-radius: 0;
-    }
-
-    @keyframes gradient-movement {
-        0% {
-            background-position: 0% 50%;
+    <style>
+        /* New Section Styles */
+        .content-section {
+            background-color: #f5f5f5; /* Light grey background */
+            padding: 60px 0; /* Padding for the section */
         }
-        25% {
-            background-position: 50% 100%;
+
+        .content-container {
+            max-width: 1300px;
+            margin: 0 auto; /* Center the content */
+            padding: 0 20px; /* Padding for mobile responsiveness */
         }
-        50% {
-            background-position: 100% 50%;
+
+        .content-box {
+            background-color: white;
+            border-radius: 15px; /* Rounded corners */
+            padding: 60px;
+            margin-bottom: 40px; /* Spacing between boxes */
+            text-align: center;
         }
-        75% {
-            background-position: 50% 0%;
+
+        .large {
+            font-size: 3rem
         }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
 
-    .gradient-background::before, .gradient-background::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
-        animation: swirl 10s ease-in-out infinite alternate both, scale 15s ease-in-out infinite;
-        pointer-events: none;
-        mix-blend-mode: overlay;
-    }
+        /* Style for the top banner */
+            .top-banner {
+                background-color: #7A1F8D; /* Purple background */
+                padding: 50px 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 100px;
+            }
 
-    .gradient-background::after {
-        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 50%);
-        animation: swirl 8s linear infinite alternate both, scale 20s ease-in-out infinite reverse;
-    }
+            /* Content inside the banner */
+            .banner-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
 
-    @keyframes swirl {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
+            /* Title styling */
+            .banner-content .title {
+                flex: 1;
+                font-size: 4rem;
+                font-weight: bold;
+                color: white;
+            }
 
-    @keyframes scale {
-        0% {
-            transform: scale(1);
-        }
-        100% {
-            transform: scale(1.5);
-        }
-    }
+            /* Caption styling */
+            .banner-content .caption {
+                flex: 1;
+                text-align: right;
+                font-size: 1.5em;
+                line-height: 1.6;
+                color: white;
+                margin-right: 20px;
+            }
 
-    #homepage-banner {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0; /* Remove padding to avoid gaps */
-        margin: 0; /* Remove margin to avoid gaps */
-        min-height: 500px; /* Ensure there's enough height for the effect */
-    }
+    </style>
 
-    #homepage-banner-wrapper {
-        text-align: center;
-        max-width: 750px;
-        width: 100%;
-        z-index: 1; /* Ensure content is above the background */
-    }
 
-    .title {
-        font-size: 7rem; /* Large font size for the title */
-        font-weight: 1000; /* Bold font weight for emphasis */
-        letter-spacing: -1px; /* Slightly condense the letter spacing */
-        margin: 0;
-        text-align: center;
-        color: white;
-    }
-
-    .subtitle {
-        font-size: 1.25rem; /* Smaller font size for the subtitle */
-        font-weight: 400; /* Regular font weight */
-        line-height: 1.5; /* Comfortable line height */
-        letter-spacing: 0.5px; /* Slightly increase letter spacing */
-        margin-top: 1rem;
-        text-align: center;
-        color: white;
-    }
-
-    /* New Section Styles */
-    .content-section {
-        background-color: #f5f5f5; /* Light grey background */
-        padding: 60px 0; /* Padding for the section */
-    }
-
-    .content-container {
-        max-width: 1300px;
-        margin: 0 auto; /* Center the content */
-        padding: 0 20px; /* Padding for mobile responsiveness */
-    }
-
-    .content-box {
-        background-color: white;
-        border-radius: 15px; /* Rounded corners */
-        padding: 60px;
-        margin-bottom: 40px; /* Spacing between boxes */
-        text-align: center;
-    }
-
-    .large {
-        font-size: 3rem
-    }
-
-    .slideshow_wrapper {
-        position: relative;
-        max-width: 100%;
-        height: auto;
-        overflow: hidden;
-    }
-
-    .slider {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-    }
-
-    .slider img {
-        max-width: 100%;
-        display: none;
-    }
-
-    .slider img.active {
-        display: block;
-    }
-
-    .navigation-button {
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    .navigation-button .dot {
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        margin: 0 5px;
-        background-color: #bbb;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .navigation-button .dot.active {
-        background-color: #333;
-    }
-</style>
-
-<div id="homepage-banner" class="gradient-background">
-    <div id="homepage-banner-wrapper">
-        <h1 class="title">Hello World</h1>
-        <p class="subtitle">We are <b>Women in Technology</b> at The University of Sydney.
-        Join us in empowering female students entering the tech industry. Our members 
-        get ahead by building their professional networks, sharpening their technical 
-        skills, and connecting with like-minded peers.</p>
-    </div>
-</div>
-
-<!-- New Section -->
-<section class="content-section">
-    <div class="content-container">
-        <div class="content-box">
-            <h2 class="large">Don't miss out!</h2>
-            <div class="slideshow_wrapper">
-                <div class="slider">
-                    <img id="img-1" src="/static/images/temp1.png" alt="Image 1" class="active"/>
-                    <img id="img-2" src="/static/images/temp2.png" alt="Image 2"/>
-                    <img id="img-3" src="/static/images/temp3.png" alt="Image 3"/>
-                </div>
-                <div class="navigation-button">
-                    <span class="dot active" onclick="changeSlide(0)"></span>
-                    <span class="dot" onclick="changeSlide(1)"></span>
-                    <span class="dot" onclick="changeSlide(2)"></span>
+    <div class="top-banner">
+            <div class="banner-content">
+                <h1 class="title"> Events</h1>
+                <div class="caption">
+                    View upcoming and past events.
                 </div>
             </div>
-        </div>
-        <div class="content-box">
-            <h2 class="large">Follow our socials</h2>
-            <p>This is another section of content. Use this space for more details.</p>
-        </div>
-        <div class="content-box">
-            <h2 class="large">Check out our sponsors</h2>
-            <p>This is a third section of content. Customize as needed.</p>
-        </div>
     </div>
-</section>
 
-<footer>  
-    {% include "footer.jinja" %}
-</footer>
 
-<script>
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slider img');
-const dots = document.querySelectorAll('.navigation-button .dot');
+    <div class="content-box" style="margin-bottom:300px">
+        <h1>This page is still under development.</h1>
+        <p>Thank you for your patience.</p>
+    </div>
 
-function changeSlide(slideIndex) {
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
 
-    currentSlide = slideIndex;
-
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-}
-</script>
+    <footer>  
+        {% include "footer.jinja" %}
+    </footer>
 
 {% endblock %}
