@@ -45,4 +45,6 @@ window.onclick = function(event) {
             }
         }
     }
+    
 }
+
