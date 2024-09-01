@@ -45,12 +45,6 @@ window.onclick = function(event) {
             }
         }
     }
-<<<<<<< HEAD
-    }
-}
+    
 }
 
-// SLIDE
-=======
-}
->>>>>>> aa3479f5d95e1c6bff7d780f6571001e515e4000
