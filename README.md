@@ -9,3 +9,4 @@ The goal of future development is to make the code more efficient**
 ## Future Goals
 1. Introducing a Database
 2. Creating a Mailing System
+.
