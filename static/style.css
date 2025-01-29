@@ -1,6 +1,22 @@
 @font-face { /* The official WIT font is Open Sauce One */
-    font-family: 'OpenSauceOne';
-    src: url('/static/fonts/OpenSauceOne-Regular.ttf') format('truetype');
+  font-family: 'OpenSauceOne';
+  src: url('/static/fonts/OpenSauceOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSauceOne';
+  src: url('/static/fonts/OpenSauceOne-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSauceOne';
+  src: url('/static/fonts/OpenSauceOne-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
 }
 
 * {
