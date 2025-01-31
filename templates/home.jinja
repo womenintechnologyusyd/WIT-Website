@@ -202,6 +202,51 @@
             fill: white; /* Makes the arrows fully filled white */
         }
 
+        .sponsors-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .sponsors-subtitle {
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .sponsors-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            margin: 20px auto 0 auto;
+        }
+
+        .sponsor-logo {
+            background-color: white;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 100px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+        }
+
+        .sponsor-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .sponsors-container:nth-child(4),
+        .sponsors-container:nth-child(5) {
+            grid-column: span 3;
+            justify-self: center;
+        }
+
+
         /* The alert message box */
         .alert {
             padding: 20px;
@@ -297,6 +342,18 @@
                 </a>
             </div>
         </div>
+
+        <div>
+            <h2 class="sponsors-title">Thank you to our sponsors</h2>
+            <div class="sponsors-container">
+                <div class="sponsor-logo"><img src="static/images/Atlassian_logo.png" alt="Sponsor 1"></div>
+                <div class="sponsor-logo"><img src="static/images/tiktok-now-logo.jpg" alt="Sponsor 2"></div>
+                <div class="sponsor-logo"><img src="static/images/rabobank_landscape.webp" alt="Sponsor 3"></div>
+                <div class="sponsor-logo"><img src="static/images/JaneStreet_logo.png" alt="Sponsor 4"></div>
+                <div class="sponsor-logo"><img src="static/images/Elead_logo.png" alt="Sponsor 5"></div>
+            </div>
+        </div>
+
     </div>
 
     <footer>  
