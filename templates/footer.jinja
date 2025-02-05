@@ -13,15 +13,6 @@
         height: 200px; 
     }
 
-    /* Align content in the centre on mobile */
-    @media only screen and (max-width: 360px) {
-        #footer-main-content {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-
     body {
         /* Additions for the footer */
         position: relative;
@@ -54,6 +45,15 @@
     #credits {
         font-weight: bold;
     }
+
+    @media only screen and (max-width: 600px) {
+            #footer-main-content {
+                justify-content: center;
+                align-items: center;
+            }
+    }
+
+
 
 </style>
 
