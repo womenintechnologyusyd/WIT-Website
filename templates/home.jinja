@@ -141,6 +141,23 @@
             transition: transform 0.3s ease;
         }
 
+        @media only screen and (max-width: 600px) {
+            .socials-container {
+                width: 80%;
+                display: block;
+            }
+
+            .social-icons {
+                margin-top: 30px;
+            }
+
+            .social-icon {
+                width: 60%;
+                height: auto;
+            }
+        }
+
+
         .slideshow-container {
             background-color: white;
             border-radius: 15px;
@@ -233,10 +250,6 @@
             .slideshow-container {
                 width: 80%;
             }
-
-            .slideshow-subtitle {
-                font-size: 1rem;
-            }
           
         }
 
@@ -289,6 +302,7 @@
             height: 80px;  /* Adjust height */
             object-fit: contain; /* Prevents distortion */
         }
+
 
         /* The alert message box */
         .alert {
