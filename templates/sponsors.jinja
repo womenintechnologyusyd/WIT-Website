@@ -12,6 +12,11 @@
             margin-left: 50px;
         }
 
+        .sponsor-logo {
+            max-width: 300px;
+            margin-right: 50px;
+        }
+
         hr {
             clear:both;
             display:block;
@@ -58,6 +63,27 @@
             color: white;
             margin-right: 20px;
         }
+
+        /* Mobile Banner Content */
+        @media only screen and (max-width: 600px) {
+            .banner-content {display: block;}
+
+            .banner-content .title {font-size: 3rem;}
+
+            .banner-content .caption {
+                text-align: left;
+                margin-left: 20px;
+                font-size: 1rem;
+            }
+
+            .many_center {
+                display:block;
+                padding: 10px;
+            }
+
+            .description {margin: 20px 0px 20px 0px;}
+            .sponsor-logo {margin:0;}
+        }
   
     </style>
 
@@ -85,7 +111,7 @@
 
         <div class="many_center">
             <a href="https://www.atlassian.com/" target="_blank">
-                <img img id="sponsor_logo" alt="Atlassian Logo" src="/static/images/Atlassian_logo.png" width="300px">
+                <img class="sponsor-logo" img id="sponsor1" alt="Atlassian Logo" src="/static/images/Atlassian_logo.png">
             </a>
         
             <p class="description">Atlassian is an Australian software company that develops world-class tools for software developers, 
@@ -97,7 +123,7 @@
 
         <div class="many_center">
             <a href="https://www.rabobank.com.au/" target="_blank">
-                <img img id="sponsor4" alt="Rabobank Logo" src="/static/images/rabobank_landscape.webp" width="300px">
+                <img class="sponsor-logo" img id="sponsor4" alt="Rabobank Logo" src="/static/images/rabobank_landscape.webp">
             </a>  
         
             <p class="description">Rabobank is an international banking company focused on sustainably supporting both farmers and 
@@ -110,7 +136,7 @@
 
         <div class="many_center">
             <a href="https://www.janestreet.com/" target="_blank">
-                <img img id="sponsor3" alt="JaneStreet Logo" src="/static/images/JaneStreet_logo.png" width="300px">
+                <img class="sponsor-logo" img id="sponsor3" alt="JaneStreet Logo" src="/static/images/JaneStreet_logo.png">
             </a> 
         
             <p class="description">Jane Street is a global quantitative trading firm and liquidity provider with a unique 
@@ -122,7 +148,7 @@
 
         <div class="many_center">
             <a href="http://e-lead.com.au/" target="_blank">
-                <img img id="sponsor4" alt="E-Lead Logo" src="/static/images/Elead_logo.png" width="300px">
+                <img class="sponsor-logo" img id="sponsor4" alt="E-Lead Logo" src="/static/images/Elead_logo.png">
             </a> 
         
             <p class="description">E-LEAD Global Centre of Excellence for Leadership, Engagement and Development 
@@ -136,7 +162,7 @@
 
         <div class="many_center" style="margin-bottom: 60px;">
             <a href="https://www.recordpoint.com/" target="_blank">
-                <img img id="sponsor5" alt="RecordPoint Logo" src="/static/images/recordpoint.png" width="300px">
+                <img class="sponsor-logo" img id="sponsor5" alt="RecordPoint Logo" src="/static/images/recordpoint.png">
             </a> 
         
             <p class="description">RecordPoint is a leading data management company that has been in the industry 

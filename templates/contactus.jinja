@@ -17,42 +17,6 @@
             padding: 0px;
         }
 
-        /* Style for the top banner */
-        .top-banner {
-            background-color: #7A1F8D; /* Purple background */
-            padding: 50px 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 100px;
-        }
-
-        /* Content inside the banner */
-        .banner-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        /* Title styling */
-        .banner-content .title {
-            flex: 1;
-            font-size: 4rem;
-            font-weight: bold;
-            color: white;
-        }
-
-        /* Caption styling */
-        .banner-content .caption {
-            flex: 1;
-            text-align: right;
-            font-size: 1.5em;
-            line-height: 1.6;
-            color: white;
-            margin-right: 20px;
-        }
-
         .heading {
             font-size: 2.5rem;
             font-weight: bold;
@@ -104,6 +68,12 @@
 
         .submit-btn:hover {
             background-color: #C991D1;
+        }
+
+        /* Mobile Page Content */
+        @media only screen and (max-width: 600px) {
+            .page-content {display: block;}
+            .column {padding-bottom: 60px;}
         }
 
     </style>
