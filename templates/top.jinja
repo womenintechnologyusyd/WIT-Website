@@ -120,9 +120,10 @@
             display: block;
         }
 
+        /* Show hamburger when clicked on */
         .show {display: block;}
 
-        @media screen and (max-width: 900px) {
+        @media screen and (max-width: 600px) {
             #menu {display:none;}
             .dropdown {display: inline-block;}
             .page-link:hover { padding-bottom: 10px;}
@@ -142,6 +143,7 @@
                     <a href={{ url_for('aboutus') }} class="page-link">About Us</a>
                     <a href={{ url_for('events') }} class="page-link">Events</a>
                     <a href={{ url_for('publications') }} class="page-link">Publications</a>
+                    <a href={{ url_for('sponsors') }} class="page-link">Sponsors</a>
                     <a href={{ url_for('contactus') }} class="page-link">Contact Us</a>
                 </div>
                 <a id="join-button" href="https://usu.edu.au/clubs/women-in-technology/" target="_blank">
@@ -158,12 +160,13 @@
 
     <!-- Hamburger  -->
     <div class="dropdown">
-        <img onclick="collapseNav()" class="dropbtn" src="/static/images/dropdown_icon.png" alt="Dropdown" style="height:30px"/>
+        <img onclick="collapseNav()" class="dropbtn" src="/static/images/hamburger.svg" alt="Dropdown" style="height:30px"/>
          
         <div id="myDropdown" class="dropdown-content">
             <a href={{ url_for('aboutus') }} class="page-link">About Us</a>
             <a href={{ url_for('events') }} class="page-link">Events</a>
             <a href={{ url_for('publications') }} class="page-link">Publications</a>
+            <a href={{ url_for('sponsors') }} class="page-link">Sponsors</a>
             <a href={{ url_for('contactus') }} class="page-link">Contact Us</a>
             <a href="https://usu.edu.au/clubs/women-in-technology/" target="_blank" class="page-link">Join Us</a> 
         </div>
