@@ -1,3 +1,13 @@
+/* Cards */
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
+
+/* card banner */
+/* @import "compass/css3"; */
+
+/* //colors
+//https://kuler.adobe.com/Theme-3-color-theme-4334234/ */
+
+
 @font-face { /* The official WIT font is Open Sauce One */
   font-family: 'OpenSauceOne';
   src: url('/static/fonts/OpenSauceOne-Regular.ttf') format('truetype');
@@ -149,8 +159,6 @@ h2 {
   clear: both;
 }
 
-/* Cards */
-@import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
 
 :root {
   --color: #3c3163;
@@ -341,12 +349,8 @@ a {
   }
 }
 
-/* card banner */
-@import "compass/css3";
 
-/* //colors
-//https://kuler.adobe.com/Theme-3-color-theme-4334234/ */
-
+/* Card Banner */
 
 .card-banner{
   margin: 20px auto;

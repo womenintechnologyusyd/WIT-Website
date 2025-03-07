@@ -58,6 +58,10 @@
             color: white;
         }
 
+        .subtitle-big-mobile {
+            display: none;
+        }
+
         /* Join us to... */
         .subtitle-small {
             font-size: 1.25rem;
@@ -67,6 +71,29 @@
             margin-top: 3rem;
             text-align: center;
             color: white;
+        }
+
+        
+        @media only screen and (max-width: 600px) {
+            .title { 
+                font-size:6rem;
+            }
+
+            .subtitle-big-mobile {
+                font-size: 1.5rem; 
+                display:block;
+                text-align: center;
+                margin: 1rem 1.5rem 1.5rem 1rem;
+            }
+
+            .subtitle-big {
+                display: none;
+            }
+
+            .subtitle-small {
+                font-size: 95%;
+                margin: 1rem 1.5rem 1.5rem 1rem;
+            }
         }
 
         .socials-container {
@@ -113,6 +140,23 @@
             height: 90px;
             transition: transform 0.3s ease;
         }
+
+        @media only screen and (max-width: 600px) {
+            .socials-container {
+                width: 80%;
+                display: block;
+            }
+
+            .social-icons {
+                margin-top: 30px;
+            }
+
+            .social-icon {
+                width: 60%;
+                height: auto;
+            }
+        }
+
 
         .slideshow-container {
             background-color: white;
@@ -202,6 +246,13 @@
             fill: white; /* Makes the arrows fully filled white */
         }
 
+        @media only screen and (max-width: 600px) {
+            .slideshow-container {
+                width: 80%;
+            }
+          
+        }
+
         .sponsors-title {
             font-size: 2.5rem;
             font-weight: bold;
@@ -252,6 +303,22 @@
             object-fit: contain; /* Prevents distortion */
         }
 
+         @media only screen and (max-width: 600px) {
+            .sponsors-title {
+                font-size: 2rem;
+            }
+
+            .sponsors-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .sponsor-logo {
+                width: 60%;
+                margin: 0 auto 0 auto;
+            }
+        }
+
+
         /* The alert message box */
         .alert {
             padding: 20px;
@@ -277,6 +344,11 @@
             color: black;
         }
 
+    
+
+
+
+
 
     </style>
 
@@ -293,6 +365,7 @@
         <div id="welcome-msg">
             <h1 class="title">Hello World</h1>
             <p class="subtitle-big">We are Women in Technology <br> at The University of Sydney </p>
+            <p class="subtitle-big-mobile">We are Women in Technology at The University of Sydney </p>
             <p class="subtitle-small">Join us to empower female students entering the tech industry. Our members 
             get ahead by building their professional networks, sharpening their technical 
             skills, and connecting with like-minded women in tech.</p>
