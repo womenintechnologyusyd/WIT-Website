@@ -4,6 +4,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
+      #header {
+            text-align: center;
+      }
+
+      @keyframes gradientSwipe {
+          0% { background-position: -100% 0; }
+          50% { background-position: 100% 0; }
+          100% { background-position: -100% 0; }
+      }
+
+      .gradient-text {
+          background: linear-gradient(90deg, #7A1F8D, #C991D1, #7A1F8D);
+          background-size: 200% 100%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: gradientSwipe 10s infinite linear;
+      }
+
+      #title {
+          font-size: 5rem;
+          font-weight: bold;
+          margin-top: 75px;
+          margin-bottom: 5px;
+          margin-left: 0;
+      }
+
+      #subtitle {
+          font-size: 1.5em;
+          font-weight: normal;
+      }
+
         hr {
             clear:both;
             display:block;
@@ -19,6 +50,12 @@
 
  
     <body>
+
+    <div id="header">
+        <h1 id="title" class="gradient-text">Events</h1>
+        <p id="subtitle" class="gradient-text">Insert caption</p>
+    </div>
+
     <section>
     
         <div class="w3-container">
