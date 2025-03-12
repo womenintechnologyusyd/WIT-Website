@@ -128,6 +128,15 @@
         <p id="subtitle" class="gradient-text">Get involved with our community</p>
     </div>
 
+    {# EVENT TEMPLATE #}
+    {# <div class="event-container">
+        <img src="{{ url_for('static', filename='images/blank.jpg') }}" class="event-image">
+        <div class="event-text">
+            <h2>Event name</h2>
+            <p>Description</p>
+        </div>
+    </div> #}
+
     {# Event 1 #}
     <div class="event-container">
         <img src="{{ url_for('static', filename='images/mentor-with-wit-2025.png') }}" class="event-image">
@@ -153,15 +162,6 @@
         </div>
     </div>
 
-    {# Event 2 #}
-    <div class="event-container">
-        <img src="{{ url_for('static', filename='images/blank.jpg') }}" class="event-image">
-        <div class="event-text">
-            <h2>Event name</h2>
-            <p>Description</p>
-        </div>
-    </div>
-
     <h2 class="heading">Previous events</h2>
 
     <div class="year-buttons">
@@ -177,6 +177,7 @@
     </div>
 
     <div class="events-grid" id="events-2025">
+        <img src="{{ url_for('static', filename='images/iwd-vision-boarding-2025.png') }}" class="event-card">
         <img src="{{ url_for('static', filename='images/semester-1-picnic-2025.png') }}" class="event-card">
         <img src="{{ url_for('static', filename='images/coffee-break-sem1-2025.png') }}" class="event-card">
     </div>
