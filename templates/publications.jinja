@@ -85,6 +85,7 @@
             height: 600px;
             object-fit: cover;
             border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .content-text {
@@ -134,8 +135,7 @@
 
     <div id="header">
         <h1 id="title" class="gradient-text">Publications</h1>
-<p id="subtitle" class="gradient-text">Explore industry insights and more</p>
-
+        <p id="subtitle" class="gradient-text">Explore industry insights and more</p>
     </div>
 
     <div class="page-content">
@@ -161,7 +161,7 @@
             <img src="{{ url_for('static', filename='images/blank.jpg') }}" alt="Description" class="content-image">
             <div class="content-text">
                 <div>
-                    <p><b>One of our best years yet,</b> 2024 saw WIT flourish with record membership, a brand-new mentoring program, and stronger industry ties than ever before.</p>
+                    <p><b>One of our best years yet,</b> 2024 saw WIT flourish with record membership, a brand-new mentoring program and stronger industry ties.</p>
                     <a href="{{ url_for('static', filename='documents/welcome-pub-2024.pdf') }}" target="_blank" class="cta-button">
                         <span class="cta-text">Read <b>Welcome to WIT 2024</b></span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-external-link">
