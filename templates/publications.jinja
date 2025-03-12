@@ -38,6 +38,10 @@
             margin: 60px;
         }
 
+        figure {
+            margin-bottom: 50px;
+        }
+
         .pub {
             display: inline-block;
             text-align: center;
@@ -46,7 +50,7 @@
 
         .pub-thumbnail {
             width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add drop shadow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Add drop shadow */
             margin-bottom: 10px;
         }
 
@@ -65,7 +69,7 @@
             height: 12px;
             vertical-align: middle;
         }
-
+        
         .content-container {
             display: flex;
             align-items: center;
@@ -115,6 +119,10 @@
 
         .cta-button:hover {
             background-color: #5a1469;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .pub-thumbnail {width:85%;}
         }
 
         .feather-external-link {

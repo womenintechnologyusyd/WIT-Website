@@ -1,12 +1,16 @@
 # WIT-Website
 
-The WIT Website details information about the Women in Techology Society. 
-All the pages have been created using HTML and CSS.
+The WIT Website details information about the Women in Technology Society. 
+All the pages have been created using Jinja, HTML and CSS.
 
-**Due to the short deadline, the website has been created with redundant code.
-The goal of future development is to make the code more efficient**
+## Running the program locally
+Run the below command in the terminal.
+```
+python3 app.py
+```
 
-## Future Goals
-1. Introducing a Database
-2. Creating a Mailing System
-.
+## Rendered Website
+The website can be viewed with the below link.
+```
+www.witusyd.com
+```
