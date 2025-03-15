@@ -3,7 +3,7 @@
 
 if(isset($_POST['submit'])) {
 
-	header(Location: "contactus.jinja?emailsent");
+	header(Location: "home.jinja");
 
 	// //Email enquiry will be sent to
 	// $mailTo = "president@witusyd.com";
