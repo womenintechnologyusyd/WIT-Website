@@ -1,12 +1,10 @@
 <?php
 
-echo '<script type="text/javascript">alert("Inside PHP!");</script>';
-
 
 if(isset($_POST['submit'])) {
 
-	echo '<script type="text/javascript">alert("Your message was sent!");</script>';
-	header(Location: "home.jinja");
+	header("Location: http://www.witusyd.com");
+    exit();
 
 	// //Email enquiry will be sent to
 	// $mailTo = "president@witusyd.com";
