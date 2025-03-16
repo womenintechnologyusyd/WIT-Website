@@ -3,9 +3,9 @@
 {% block content %} 
 
 <style>
-
     #header {
-            text-align: center;
+        text-align: center;
+        padding: 40px 0;
     }
 
     @keyframes gradientSwipe {
@@ -25,130 +25,201 @@
     #title {
         font-size: 5rem;
         font-weight: bold;
-        margin-top: 75px;
-        margin-bottom: 5px;
-        margin-left: 0;
+        margin: 0;
     }
 
     #subtitle {
         font-size: 1.5em;
         font-weight: normal;
+        margin: 10px 0 0;
     }
 
-    /* Style for the top banner */
-    .top-banner {
-        background-color: #7A1F8D; /* Purple background */
-        padding: 50px 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 100px;
+    .grey-margin-container {
+        background-color: #f3f3f3;
+        padding: 40px 20px;
     }
 
-    /* Content inside the banner */
-    .banner-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .full-white-container {
+        margin: 0 auto;
+        max-width: 1400px;
+        padding: 0 20px;
+    }
+
+    .wit-container {
+        background-color: white;
+        padding: 20px 40px 40px 40px; 
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        margin: 40px auto;
+        width: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .wit-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .exec-container {
+        background-color: white;
+        padding: 60px;
+        border-radius: 20px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        margin: 40px auto;
         width: 100%;
     }
 
-    /* Title styling */
-    .banner-content .title {
-        flex: 1;
-        font-size: 4rem;
-        font-weight: bold;
-        color: white;
-    }
-
-    /* Caption styling */
-    .banner-content .caption {
-        flex: 1;
-        text-align: right;
-        font-size: 1.5em;
-        line-height: 1.6;
-        color: white;
-        margin-right: 20px;
-    }
-
-    /* Grey margin container */
-    .grey-margin-container {
-        background-color: #f2f2f2; /* Light grey background for the margin */
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    /* Full white content wrapper */
-    .full-white-container {
-        margin: 60px;
-    }
-
-    /* General styling for the content section */
     .content-section {
-        line-height: 1.6;
-        font-size: 1.1em;
-        color: #444;
+        line-height: 1.8;
+        font-size: 1.2em;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .content-section h1 {
+        font-size: 2.5rem;
+        color: #7A1F8D;
+        margin-bottom: 30px;
+    }
+
+    .content-section p {
+        colour: black;
+        margin-bottom: 20px;
+    }
+
+    .highlight {
+        color: #7A1F8D;
+        font-weight: bold;
+        background: linear-gradient(90deg, #C991D1, #7A1F8D);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     .row {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         flex-wrap: wrap;
-        margin: 20px auto;
+        gap: 40px;
+        margin: 40px auto;
         max-width: 1200px;
     }
 
     .profile {
-        flex: 33.33%;
-        padding: 5px;
+        flex: 0 0 28%;
+        padding: 20px;
         text-align: center;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+    }
+
+    .profile:hover {
+        transform: translateY(-5px);
     }
 
     .name {
-        font-size: 15px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #7A1F8D;
+        margin-top: 15px;
     }
 
     .title {
-        font-size: 13px;
-        color: #7A1F8D;
-    }
-    /* Remove margin or padding from the last element */
-    .full-white-container, .grey-margin-container {
-        padding-bottom: 0;
-        margin-bottom: 0;
+        font-size: 1rem;
+        color: black;
+        font-style: italic;
     }
 
-    /* Ensure no margin at the top of the footer */
-    footer {
-        margin-top: 0;
-        padding-top: 0;
+    #profiles {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border: 4px solid #7A1F8D;
+        transition: border-color 0.3s ease;
     }
 
-/* Exec Porfile Images */
-#profiles {
-    border-radius: 50%;
-    width: 150px;
-}
+    .profile:hover #profiles {
+        border-color: #C991D1;
+    }
 
-.name {
-      font-size: 15px;
-}
+    .mission-section {
+        background: linear-gradient(135deg, #7A1F8D, #C991D1);
+        padding: 60px 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 80px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
 
-.title {
-      font-size: 13px;
-      color: #7A1F8D;
-}
-/* Remove margin or padding from the last element */
-.full-white-container, .grey-margin-container {
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
+    .mission-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        width: 100%;
+    }
 
-/* Ensure no margin at the top of the footer */
-footer {
-    margin-top: 0;
-    padding-top: 0;
-}
+    .mission-content .title {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: white;
+        margin: 0;
+    }
+
+    .mission-content .caption {
+        font-size: 1.3em;
+        line-height: 1.6;
+        color: white;
+        text-align: right;
+        max-width: 500px;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .profile {
+            flex: 0 0 45%;
+        }
+        .mission-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        .mission-content .title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .mission-content .caption {
+            text-align: center;
+            font-size: 1.1em;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        #title {
+            font-size: 3.5rem;
+        }
+        #subtitle {
+            font-size: 1.2em;
+        }
+        .mission-section {
+            padding: 40px 20px;
+        }
+        .wit-container, .exec-container {
+            padding: 40px 20px;
+        }
+        .profile {
+            flex: 0 0 100%;
+        }
+        .content-section h1 {
+            font-size: 2rem;
+        }
+        .content-section {
+            font-size: 1em;
+        }
+    }
 </style>
 
 <div id="header">
@@ -156,126 +227,110 @@ footer {
     <p id="subtitle" class="gradient-text">Get to know our society</p>
 </div>
 
-<!-- Grey margin container -->
-    <!-- Full white content wrapper -->
+<div class="grey-margin-container">
     <div class="full-white-container">
-        <div class="content-section">
-            <p>Women in Technology USYD (WIT) is committed to celebrating diversity, promoting
-                equality, and nurturing the growth and achievement of women in STEM fields.
-                With a vibrant and enthusiastic community, we are dedicated to creating a
-                hopeful and inclusive future for women in these fields.</p>
-            <br><p>Our events aim to offer educational, networking, and social incentives for
-                WIT members and our sponsors. We prioritize engagement and interaction
-                between participants and sponsors, and welcome suggestions for customised
-                events that meet sponsors' specific needs. These events may be held on campus
-                at USYD or at the sponsor's office. Hosting tailored initiatives can have a lasting
-                impact on participants, increasing the visibility of our sponsors.
-            </p>
-        </div>
-
-        <h1 style="text-align:center">MEET THE EXECUTIVES!</h1><br>
-
-        <!-- Row of Exec Profiles -->
-        <div class="row" style="margin-bottom:40px;">
-            <div class="profile">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/profile_pics/Miesha.jpg">
-                <div >
-                    <div class="'name"><b>Miesha Binta Noor</b></div>
-                    <div class="title"><b>President</b></div>
-                </div>
-            </div>
-            <div class="profile">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/profile_pics/SelinaN.jpg">
-                <div class="container">
-                    <div class="'name"><b>Selina Nguyen Tran</b></div>
-                    <div class="title"><b>Vice President</b></div>
-                </div>
-            </div>
-            <div class="profile">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/profile_pics/Aubrey.jpg" width="150px">
-                <div class="container">
-                    <div class="'name"><b>Aubrey Lim</b></div>
-                    <div class="title"><b>Vice President</b></div>
-                </div>
+        <div class="wit-container">
+            <div class="content-section">
+                <h1>What is WIT?</h1>
+                <p><span class="highlight">Women in Technology USYD (WIT)</span> is committed to <span class="highlight">celebrating diversity</span>, promoting equality, and nurturing the growth and achievement of women in STEM fields. With a vibrant and enthusiastic community, we are dedicated to creating a hopeful and inclusive future for women in these fields.</p>
+                <p>Our events aim to offer <span class="highlight">educational, networking, and social incentives</span> for WIT members and our sponsors. We prioritize engagement and interaction between participants and sponsors, and welcome suggestions for customized events that meet sponsors' specific needs. These events may be held on campus at USYD or at the sponsor's office, fostering lasting impacts and increasing sponsor visibility.</p>
             </div>
         </div>
 
-        <!-- Row of Exec Profiles -->
-        <div class="row" style="margin-bottom:40px;">
-            <div class="profile">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/profile_pics/Cindy.jpg">
-                <div >
-                    <div class="'name"><b>Cindy Nguyen</b></div>
-                    <div class="title"><b>Secretary</b></div>
+<div class="exec-container">
+            <div class="content-section">
+                <h1>Meet the Executives!</h1>
+            </div>
+            <div class="row">
+                <div class="profile">
+                    <img id="profiles" alt="Rayna" src="/static/images/profile_pics/Rayna.png">
+                    <div class="name">Rayna Lamack</div>
+                    <div class="title">President</div>
+                </div>
+                <div class="profile">
+                    <img id="profiles" alt="Arielle" src="/static/images/profile_pics/ArielleG.jpeg">
+                    <div class="name">Arielle Gravning</div>
+                    <div class="title">Vice President</div>
+                </div>
+                <div class="profile">
+                    <img id="profiles" alt="Amelia" src="/static/images/profile_pics/Amelia.jpg">
+                    <div class="name">Amelia Griffin</div>
+                    <div class="title">Vice President</div>
                 </div>
             </div>
-            <div class="profile">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/profile_pics/SelinaT.jpg">
-                <div class="container">
-                    <div class="'name"><b>Selina Thai</b></div>
-                    <div class="title"><b>Treasurer</b></div>
+            <div class="row">
+                <div class="profile">
+                    <img id="profiles" alt="Grace" src="/static/images/profile_pics/Grace.webp">
+                    <div class="name">Grace Abadir</div>
+                    <div class="title">Secretary</div>
+                </div>
+                <div class="profile">
+                    <img id="profiles" alt="Dyuti" src="/static/images/profile_pics/Dyuti.png">
+                    <div class="name">Dyuti Shraboni Ghosh</div>
+                    <div class="title">Treasurer</div>
+                </div>
+                <div class="profile">
+                    <img id="profiles" alt="Dawn" src="/static/images/profile_pics/Dawn.jpeg">
+                    <div class="name">Dawn Lai</div>
+                    <div class="title">Sponsorship Director</div>
                 </div>
             </div>
-            <div class="profile">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/profile_pics/Linda.jpg">
-                <div class="container">
-                    <div class="'name"><b>Linda Chen</b></div>
-                    <div class="title"><b>Sponsorship Director</b></div>
+            <div class="row">
+                <div class="profile">
+                    <img id="profiles" alt="Penelope" src="/static/images/profile_pics/Penelope.png">
+                    <div class="name">Penelope Brown</div>
+                    <div class="title">Publications Director</div>
+                </div>
+                <div class="profile">
+                    <img id="profiles" alt="Ishrat" src="/static/images/profile_pics/Ishrat.jpeg">
+                    <div class="name">Ishrat Chopra</div>
+                    <div class="title">Multimedia Director</div>
+                </div>
+                <div class="profile">
+                    <img id="profiles" alt="Fizza" src="/static/images/profile_pics/Fizza.jpg">
+                    <div class="name">Fizza Fatima</div>
+                    <div class="title">Marketing Director</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="profile">
+                    <img id="profiles" alt="Lucienne" src="/static/images/profile_pics/Lucienne.png">
+                    <div class="name">Lucienne Cao</div>
+                    <div class="title">IT Director</div>
+                </div>
+                <div class="profile">
+                    <img id="profiles" alt="Pranjal" src="/static/images/profile_pics/Pranjal.jpg">
+                    <div class="name">Pranjal Gongal</div>
+                    <div class="title">Events Director</div>
+                </div>
+                <div class="profile">
+                    <img id="profiles" alt="Imtisal" src="/static/images/profile_pics/Imtisal.jpg">
+                    <div class="name">Imtisal Ayyaz</div>
+                    <div class="title">Events Director</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="profile">
+                    <img id="profiles" alt="Claire" src="/static/images/profile_pics/Claire.jpg">
+                    <div class="name">Claire Zhang</div>
+                    <div class="title">External Director</div>
+                </div>
+                <div class="profile">
+                    <img id="profiles" alt="Shekinah" src="/static/images/profile_pics/Shekinah.jpeg">
+                    <div class="name">Shekinah Lowe</div>
+                    <div class="title">External Director</div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Row of Exec Profiles -->
-        <div class="row" style="margin-bottom:40px;">
-            <div class="profile">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/profile_pics/Arielle.jpg">
-                <div class="container">    
-                    <div class="'name"><b>Arielle Gravning</b></div>
-                    <div class="title"><b>Publications Director</b></div>
-                </div>
-            </div>
-            <div class="profile">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/profile_pics/Rayna.png">
-                <div class="container">
-                    <div class="'name"><b>Rayna Lamack</b></div>
-                    <div class="title"><b>Events Director</b></div>
-                </div>
-            </div>
-            <div class="profile">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/profile_pics/Ava.png">
-                <div class="container">
-                    <div class="'name"><b>Ava Regoli</b></div>
-                    <div class="title"><b>Events Director</b></div>
-                </div>
-            </div>
+    <div class="mission-section">
+        <div class="mission-content">
+            <h1 class="title">Our Mission</h1>
+            <p class="caption">Empowering women in STEM through community, opportunity, and innovation.</p>
         </div>
-
-        <!-- Row of Exec Profiles -->
-        <div class="row" style="margin-bottom:40px;">
-            <div class="profile">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/profile_pics/Yastika.jpg">
-                <div >
-                    <div class="'name"><b>Yastika Choure</b></div>
-                    <div class="title"><b>Marketing Director</b></div>
-                </div>
-            </div>
-            <div class="profile">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/profile_pics/Amelia.jpg">
-                <div class="container">
-                    <div class="'name"><b>Amelia Griffin</b></div>
-                    <div class="title"><b>External Director</b></div>
-                </div>
-            </div>
-            <div class="profile">
-                <img img id="profiles" alt="Portrait Placeholder" src="/static/images/profile_pics/Xin.jpg">
-                <div class="container">
-                    <div class="'name"><b>Xin Lin</b></div>
-                    <div class="title"><b>External Director</b></div>
-                </div>
-            </div>
-        </div>
-
-    </div> <!-- End of full white content wrapper -->
+    </div>
+</div>
 
 <footer>  
     {% include "footer.jinja" %}
