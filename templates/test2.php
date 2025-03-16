@@ -1,10 +1,10 @@
 <?php
 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+echo "<h2>Inside PHP FORM </h2>"	
 
 
 if(isset($_POST['submit'])) {
+	echo "<h2>Submit processed </h2>"	
 
 	header("Location: http://www.witusyd.com/");
     exit();
