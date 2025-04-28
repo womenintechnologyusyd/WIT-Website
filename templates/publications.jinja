@@ -38,19 +38,19 @@
             margin: 60px;
         }
 
-        figure {
+        .figure {
             margin-bottom: 50px;
         }
 
         .pub {
             display: inline-block;
-            text-align: center;
+            text-align: at center;
             margin-right: 50px;
         }
 
         .pub-thumbnail {
             width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Add drop shadow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             margin-bottom: 10px;
         }
 
@@ -113,21 +113,84 @@
             text-decoration: none;
             padding: 12px 20px;
             border-radius: 30px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .cta-button:hover {
             background-color: #5a1469;
+            transform: scale(1.05);
         }
 
         @media only screen and (max-width: 600px) {
             .pub-thumbnail {width:85%;}
+            .content-container {
+                flex-direction: column;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .content-image, .content-text {
+                width: 100%;
+                height: auto;
+            }
+            .content-text {
+                padding: 30px;
+                font-size: 20px;
+            }
         }
 
         .feather-external-link {
             width: 18px;
             height: 18px;
+        }
+
+        .newsletter-container {
+            text-align: center;
+            margin: 80px 20px;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .newsletter-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-container h3 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-container p {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+        }
+
+        .newsletter-container h3, 
+        .newsletter-container p {
+            color: #7A1F8D; /* Solid purple color */
+        }
+
+        @media only screen and (max-width: 600px) {
+            .newsletter-container {
+                margin: 40px 10px;
+                padding: 20px;
+            }
+            .newsletter-container h3 {
+                font-size: 2em;
+            }
+            .newsletter-container p {
+                font-size: 1.4em;
+            }
+            .newsletter-icon {
+                width: 40px;
+                height: 40px;
+            }
         }
 
     </style>
@@ -140,7 +203,7 @@
     <div class="page-content">
 
         <div class="content-container">
-            <img src="{{ url_for('static', filename='images/first-year-guide.png') }}" alt="Description" class="content-image">
+            <img src="{{ url_for('static', filename='images/first-year-guide.png') }}" alt="First Year Guide" class="content-image">
             <div class="content-text">
                 <div>
                     <p><b>Are you a first-year student?</b> See the advice from our 2025 Executive Team on how to get ahead and make the most of university life.</p>
@@ -157,7 +220,7 @@
         </div>
 
         <div class="content-container">
-            <img src="{{ url_for('static', filename='images/welcome-pub-thumbnail.png') }}" alt="Description" class="content-image">
+            <img src="{{ url_for('static', filename='images/welcome-pub-thumbnail.png') }}" alt="Welcome to WIT 2024" class="content-image">
             <div class="content-text">
                 <div>
                     <p><b>One of our best years yet,</b> 2024 saw WIT flourish with record membership, a brand-new mentoring program and stronger industry ties.</p>
@@ -173,20 +236,20 @@
             </div>
         </div>
 
-        {# <figure class="pub">
-            <img src="{{ url_for('static', filename='images/welcome-pub-thumbnail.png') }}" alt="Magazine Front Page" class="pub-thumbnail">
-            <figcaption>
-                <a href="{{ url_for('static', filename='documents/welcome-pub-2024.pdf') }}" target="_blank" class="pub-caption">
-                    Welcome to WIT 2024 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-external-link">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                </a>
-            </figcaption>
-        </figure> #}
-    
+        <div class="newsletter-container">
+            <img src="static/images/wit_circle.png" alt="Newsletter Icon" class="newsletter-icon">
+            <h3 class="purple-text">Join Our Newsletter</h3>
+            <p class="purple-text">Stay updated with the latest WIT news!</p>
+            <a href="https://substack.com/@usydwomenintech" target="_blank" class="cta-button">
+                <span class="cta-text">Subscribe to <b>WIT Newsletters</b></span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-external-link">
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                </svg>
+            </a>
+        </div>
+
     </div>
 
     <footer>  
