@@ -1,6 +1,6 @@
 {% extends 'top.jinja' %}
 
-{% block content %} 
+{% block content %}
 
 <style>
     #header {
@@ -86,7 +86,7 @@
     }
 
     .content-section p {
-        colour: black;
+        color: black;
         margin-bottom: 20px;
     }
 
@@ -132,6 +132,12 @@
         font-size: 1rem;
         color: black;
         font-style: italic;
+    }
+
+    .degree {
+        font-size: 0.9rem;
+        color: #C991D1;
+        margin-top: 5px;
     }
 
     #profiles {
@@ -207,6 +213,7 @@
         }
         .mission-section {
             padding: 40px 20px;
+            margin: 20px 0; /* Reduced margin for mobile */
         }
         .wit-container, .exec-container {
             padding: 40px 20px;
@@ -228,12 +235,14 @@
     <p id="subtitle" class="gradient-text">Get to know our society</p>
 </div>
 
+
 <div class="mission-section">
-        <div class="mission-content">
-            <h1 class="title">Our Mission</h1>
-            <p class="caption">Empowering women in STEM through community, opportunity, and innovation.</p>
-        </div>
+    <div class="mission-content">
+        <h1 class="title">Our Mission</h1>
+        <p class="caption">Empowering women in STEM through community, opportunity, and innovation.</p>
     </div>
+</div>
+
 
 <div class="grey-margin-container">
 
@@ -248,7 +257,7 @@
     
      
 
-<div class="exec-container">
+        <div class="exec-container">
             <div class="content-section">
                 <h1>Meet the Executives!</h1>
             </div>
@@ -257,16 +266,19 @@
                     <img id="profiles" alt="Rayna" src="/static/images/profile_pics/Rayna.png">
                     <div class="name">Rayna Lamack</div>
                     <div class="title">President</div>
+                    <div class="degree">Bachelor of Engineering (Biomedical)/Bachelor of Science (Neuroscience)</div>
                 </div>
                 <div class="profile">
                     <img id="profiles" alt="Arielle" src="/static/images/profile_pics/ArielleG.jpeg">
                     <div class="name">Arielle Gravning</div>
                     <div class="title">Vice President</div>
+                    <div class="degree">Bachelor of Advanced Computing (Computational Data Science)/Bachelor of Commerce (Business Analytics)</div>
                 </div>
                 <div class="profile">
                     <img id="profiles" alt="Amelia" src="/static/images/profile_pics/Amelia.jpg">
                     <div class="name">Amelia Griffin</div>
                     <div class="title">Vice President</div>
+                    <div class="degree">Bachelor of Electrical Engineering (Honours)/Bachelor of Commerce (Finance)</div>
                 </div>
             </div>
             <div class="row">
@@ -274,16 +286,19 @@
                     <img id="profiles" alt="Grace" src="/static/images/profile_pics/Grace.webp">
                     <div class="name">Grace Abadir</div>
                     <div class="title">Secretary</div>
+                    <div class="degree">Bachelor of Biomedical Engineering (Honours)</div>
                 </div>
                 <div class="profile">
                     <img id="profiles" alt="Dyuti" src="/static/images/profile_pics/Dyuti.png">
                     <div class="name">Dyuti Shraboni Ghosh</div>
                     <div class="title">Treasurer</div>
+                    <div class="degree">Bachelor of Software Engineering (Honours)</div>
                 </div>
                 <div class="profile">
                     <img id="profiles" alt="Dawn" src="/static/images/profile_pics/Dawn.jpeg">
                     <div class="name">Dawn Lai</div>
                     <div class="title">Sponsorship Director</div>
+                    <div class="degree">Bachelor of Biomedical Engineering (Mechanical Design)</div>
                 </div>
             </div>
             <div class="row">
@@ -291,16 +306,19 @@
                     <img id="profiles" alt="Penelope" src="/static/images/profile_pics/Penelope.png">
                     <div class="name">Penelope Brown</div>
                     <div class="title">Publications Director</div>
+                    <div class="degree">Bachelor of Mechatronic Engineering (Honours)/Bachelor of Arts (International Relations)</div>
                 </div>
                 <div class="profile">
                     <img id="profiles" alt="Ishrat" src="/static/images/profile_pics/Ishrat.jpeg">
                     <div class="name">Ishrat Chopra</div>
                     <div class="title">Multimedia Director</div>
+                    <div class="degree">Bachelor of Engineering (Honours) with Space Engineering (Aeronautical Stream)</div>
                 </div>
                 <div class="profile">
                     <img id="profiles" alt="Fizza" src="/static/images/profile_pics/Fizza.jpg">
                     <div class="name">Fizza Fatima</div>
                     <div class="title">Marketing Director</div>
+                    <div class="degree">Bachelor of Advanced Computing (Software Development/Financial Mathematics/Statistics)</div>
                 </div>
             </div>
             <div class="row">
@@ -308,16 +326,19 @@
                     <img id="profiles" alt="Lucienne" src="/static/images/profile_pics/Lucienne.png">
                     <div class="name">Lucienne Cao</div>
                     <div class="title">IT Director</div>
+                    <div class="degree">Bachelor of Advanced Computing (Computer Science/Computational Data Science)</div>
                 </div>
                 <div class="profile">
                     <img id="profiles" alt="Pranjal" src="/static/images/profile_pics/Pranjal.jpg">
                     <div class="name">Pranjal Gongal</div>
                     <div class="title">Events Director</div>
+                    <div class="degree">Bachelor of Advanced Computing (Computer Science/Computational Data Science)</div>
                 </div>
                 <div class="profile">
                     <img id="profiles" alt="Imtisal" src="/static/images/profile_pics/Imtisal.jpg">
                     <div class="name">Imtisal Ayyaz</div>
                     <div class="title">Events Director</div>
+                    <div class="degree">Bachelor of Advanced Computing (Computer Science)/Bachelor of Commerce (Business Analytics)</div>
                 </div>
             </div>
             <div class="row">
@@ -325,16 +346,17 @@
                     <img id="profiles" alt="Claire" src="/static/images/profile_pics/Claire.jpg">
                     <div class="name">Claire Zhang</div>
                     <div class="title">External Director</div>
+                    <div class="degree">Bachelor of Commerce (Business Analytics/Computer Science)</div>
                 </div>
                 <div class="profile">
                     <img id="profiles" alt="Shekinah" src="/static/images/profile_pics/Shekinah.jpeg">
                     <div class="name">Shekinah Lowe</div>
                     <div class="title">External Director</div>
+                    <div class="degree">Bachelor of Engineering (Biomedical)</div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
 
 <footer>  
