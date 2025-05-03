@@ -4,77 +4,74 @@
     <style>
 
         :root {
-            --dark-purple: #7A1F8D;  /* Default WIT dark purple */
-            --darker-purple: rgb(85, 28, 111);  /* Darker purple for hovering */
-            --menu-gap: 30px; /* Gap between About Us, Events, etc.*/
+            --dark-purple: #7A1F8D;
+            --darker-purple: rgb(85, 28, 111);
+            --menu-gap: 30px;
         }
 
-        /* Navigation bar */
+        /* Navigation Bar */
         #navbar {
-            width: 100%;  /* The navbar stretches across the entire window */
+            width: 100%;
             height: 75px;
-            z-index: 10; /* The navbar is stacked on top of most other UI elements */
+            z-index: 10;
             background: white;
             box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
         } 
 
-        /* Wrapper containing logo, page links and join button */
         #navbar-wrapper {
             display: flex;
             height: 100%;
             margin: 0px 60px;
-            align-items: center; /* Vertically aligns children */
+            align-items: center;
         }
 
         #wit-logo {
-            padding-top: 5px; /* Fine tunes the vertical alignment */
+            padding-top: 5px;
         }
 
-        /* Menu contains page links and join button */
+        /* Menu */
         #menu {
             display: flex;
             height: 100%;
-            margin-left: auto; /* Align navigation menu to the right */
-            gap: var(--menu-gap); /* Inserts a gap between children */
+            margin-left: auto;
+            gap: var(--menu-gap);
             letter-spacing: 1px;
             font-size: 14px;
             font-weight: normal;
         }
 
-        /* Wrapper containing the page links */
         #page-link-wrapper {
             display: flex;
             height: 100%;
-            gap: var(--menu-gap); /* Inserts a gap between children */
+            gap: var(--menu-gap);
         }
 
-        /* Page links include About Us, Events, Sponsors, Publications, and Contact Us */
         .page-link {
-            display: inline-flex; /* Inline-flex keeps it inline with text but allows flexbox properties */
+            display: inline-flex;
             align-items: center;
             position: relative;
             color: black;
             text-decoration: none;
-            padding: 0 5px; /* Optional padding to create space around the text */
+            padding: 0 5px;
         }
 
         .page-link::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 2px; /* Adjust thickness here */
-            background-color: var(--dark-purple); /* Dark purple underline */
+            height: 2px;
+            background-color: var(--dark-purple);
             left: 50%;
-            bottom: +22px; /* Adjust to position underline directly beneath text */
+            bottom: +22px;
             transition: width 0.3s ease;
             transform: translateX(-50%);
         }
 
         .page-link:hover::after {
-            width: 90%; /* Full width on hover */
+            width: 90%;
         }
 
-        /* Join Us button*/
+        /* Join Us */
         #join-button {
             display: flex;
             align-items: center;
@@ -111,7 +108,7 @@
             overflow: auto;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             right: 0;
-            z-index: 3; /*Having is display ontop of the homepage title page*/
+            z-index: 3;
         }
 
         .dropdown-content a {
@@ -121,7 +118,6 @@
             display: block;
         }
 
-        /* Show hamburger when clicked on */
         .show {display: block;}
 
         @media screen and (max-width: 900px) {
@@ -135,7 +131,7 @@
     </style>
     
 
-    <!-- Navigation bar -->
+    <!-- Navigation Bar -->
     <nav id="navbar">
         <nav id="navbar-wrapper">
             <a href ={{ url_for('index') }} id="wit-logo"><img img id="wit-logo-img" alt="WIT Logo" src="/static/images/wit_logo.jpg" width="80px"></a>

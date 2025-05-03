@@ -8,7 +8,7 @@
         $email = $_POST['email'];
         $subject = $_POST['subject'];
 
-        //Email body I will receive
+        // Email body I will receive
         $message = "Client Name: " . $name . "\n"
         . "Client Message: " . "\n" . $_POST['message'];
 
