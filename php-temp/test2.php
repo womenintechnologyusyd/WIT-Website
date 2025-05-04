@@ -47,8 +47,9 @@
 		padding:10px;
 		font-size:15px;
 	}
-</style>
+	</style>
 </head>
+
 <body>
 
 	<div class="container">

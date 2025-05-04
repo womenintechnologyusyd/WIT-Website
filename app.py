@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, abort, url_for
 from flask_socketio import SocketIO
 import secrets
@@ -12,7 +11,7 @@ socketio = SocketIO(app)
 
 # import socket_routes
 
-# home page
+# Home page
 @app.route("/")
 def index():
     return render_template("home.jinja")
@@ -51,4 +50,3 @@ def page_not_found(_):
 
 if __name__ == '__main__':
     socketio.run(app)
-    
