@@ -101,18 +101,12 @@
             animation: gradientSwipe 5s infinite linear;
         }
 
-        @media only screen and (max-width: 600px) {
-            .page-content {
-                margin: 20px;
-            }
+         /* Smaller Screen Adjustments */
+        @media only screen and (max-width: 900px) {
+            .page-content {margin: 40px;}
 
-            #title {
-                font-size: 3rem;
-            }
-
-            #subtitle {
-                font-size: 1.2rem;
-            }
+            #title {font-size: 3.5rem;}
+            #subtitle {font-size: 1.2em;}
 
             .sponsor-section {
                 flex-direction: column;
@@ -129,9 +123,7 @@
                 text-align: center;
             }
 
-            .intro-text {
-                font-size: 1rem;
-            }
+            
         }
     </style>
 
@@ -186,7 +178,7 @@
 
         <hr>
 
-        <div class="sponsor-section">
+        {# <div class="sponsor-section">
             <a href="http://e-lead.com.au/" target="_blank">
                 <img class="sponsor-logo" id="sponsor4" alt="E-Lead Logo" src="/static/images/Elead_logo.png">
             </a> 
@@ -197,7 +189,7 @@
             of over 27,000 people and activities in over 15 countries.</p>
         </div>
 
-        <hr>
+        <hr> #}
 
         <div class="sponsor-section" style="margin-bottom: 60px;">
             <a href="https://www.recordpoint.com/" target="_blank">
