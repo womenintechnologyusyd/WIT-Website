@@ -34,6 +34,12 @@
             font-weight: normal;
         }
 
+        .events-wrapper {
+            position: relative;
+            max-width: 1020px;
+            margin: 0 auto;
+        }
+
         .event-container {
             display: flex;
             align-items: center;
@@ -50,6 +56,7 @@
         .event-image {
             width: 480px;
             height: 600px;
+            object-fit: cover;
         }
 
         .event-text {
@@ -71,6 +78,49 @@
             color: black;
             font-size: 1em;
             margin-bottom: 10px;
+        }
+
+        .navigation-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .arrow {
+            cursor: pointer;
+            font-size: 2rem;
+            color: #7A1F8D;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .arrow:hover {
+            background: #C991D1;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .arrow.disabled {
+            color: #ccc;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: not-allowed;
+        }
+
+        .arrow.disabled:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: none;
         }
 
         .heading {
@@ -121,37 +171,52 @@
             background-color: #f3f3f3;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
         }
 
         /* Smaller Screen Adjustments */
         @media only screen and (max-width: 900px) {
-            #title {font-size: 3.5rem;}
-            #subtitle {font-size: 1.2em;}
+            #title { font-size: 3.5rem; }
+            #subtitle { font-size: 1.2em; }
+
+            .events-wrapper { padding: 0 20px; }
 
             .event-container {
                 display: inline-block;
                 overflow: visible;
-                height:auto;
+                height: auto;
                 margin: 60px 40px;
             }
 
             .event-image {
                 height: auto;
                 width: 100%;
-            } 
+            }
 
-             .event-text {
+            .event-text {
                 width: auto;
-                padding: 50px;
+                padding: 30px;
                 text-align: left;
             }
 
-            .heading{margin-left: 40px;}
-            .events-grid{margin-left: 40px; justify-content:space-evenly;}
-            .year-buttons{margin-left: 40px;}
+            .navigation-arrows {
+                position: static;
+                transform: none;
+                justify-content: space-between;
+                margin: 20px auto;
+                width: 200px;
+            }
 
+            .arrow {
+                font-size: 1.5rem;
+                width: 40px;
+                height: 40px;
+            }
+
+            .heading { margin-left: 40px; }
+            .events-grid { margin-left: 40px; justify-content: space-evenly; }
+            .year-buttons { margin-left: 40px; }
         }
-
     </style>
 
     <div id="header">
@@ -159,28 +224,49 @@
         <p id="subtitle" class="gradient-text">Get involved with our community</p>
     </div>
 
-    {# Event 1 #}
-    <div class="event-container">
-        <img src="{{ url_for('static', filename='images/mentor-with-wit-2025.png') }}" class="event-image">
-        <div class="event-text">
-            <h2>Peer Mentoring Program</h2>
-            <div>
-                <p>Join the Women in Technology Peer Mentoring Program as a mentor and earn <strong>PEP hours</strong>!</p>
-
-                <p><strong>Register interest: </strong><a href="https://forms.gle/g3Kt15Mps7w943317" target="_blank">https://forms.gle/g3Kt15Mps7w943317</a></p>
-                <p><strong>Program runs from March to June 2025</strong></p>
-
-                <p>🌟 Guide first & second-year students through uni life</p>
-                <p>🌟 Gain leadership & communication skills</p>
-                <p>🌟 Boost your resume with mentorship experience</p>
-                <p>🌟 Build a strong network in tech</p>
-
-                <p>💬 <strong>Flexible commitment</strong> – just 3 check-ins per semester (in-person or online)!</p>
-
-                <p>📧 <strong>Questions?</strong> Email us: <a href="mailto:events@witusyd.com">events@witusyd.com</a></p>
-
-                <p>Make a difference & empower the next generation of women in tech! 💻✨ <strong>Sign up now!</strong> 💜</p>
+    <div class="events-wrapper">
+        {# Event 1 #}
+        <div class="event-container" id="event-1">
+            <img src="{{ url_for('static', filename='images/mentor-with-wit-2025.png') }}" class="event-image">
+            <div class="event-text">
+                <h2>Peer Mentoring Program</h2>
+                <div>
+                    <p>Join the Women in Technology Peer Mentoring Program as a mentor and earn <strong>PEP hours</strong>!</p>
+                    <p><strong>Register interest: </strong><a href="https://forms.gle/g3Kt15Mps7w943317" target="_blank">https://forms.gle/g3Kt15Mps7w943317</a></p>
+                    <p><strong>Program runs from March to June 2025</strong></p>
+                    <p>🌟 Guide first & second-year students through uni life</p>
+                    <p>🌟 Gain leadership & communication skills</p>
+                    <p>🌟 Boost your resume with mentorship experience</p>
+                    <p>🌟 Build a strong network in tech</p>
+                    <p>💬 <strong>Flexible commitment</strong> – just 3 check-ins per semester (in-person or online)!</p>
+                    <p>📧 <strong>Questions?</strong> Email us: <a href="mailto:events@witusyd.com">events@witusyd.com</a></p>
+                    <p>Make a difference & empower the next generation of women in tech! 💻✨ <strong>Sign up now!</strong> 💜</p>
+                </div>
             </div>
+        </div>
+
+        {# Event 2 #}
+        <div class="event-container" id="event-2" style="display: none;">
+            <img src="{{ url_for('static', filename='images/foundershack.jpg') }}" class="event-image">
+            <div class="event-text">
+                <h2>FoundersHack Sydney</h2>
+                <div>
+                    <p>Got a startup idea? Don't wait, build it at <strong>FoundersHack Sydney</strong>!</p>
+                    <p><strong>Apply now: </strong><a href="https://lu.ma/4e3rdgy5" target="_blank">https://lu.ma/4e3rdgy5</a></p>
+                    <p>FoundersHack isn't just another hackathon — it's your launchpad to ideate, build, and pitch your startup idea to a panel of founders and venture capitalists.</p>
+                    <p>🌟 Fail fast and adapt your startup with real-time advice from experienced mentors</p>
+                    <p>🌟 Compete for a prize pool valued at <strong>$3,000</strong></p>
+                    <p>🌟 Collaborate with like-minded innovators</p>
+                    <p>🌟 Showcase your ideas to industry experts</p>
+                    <p><strong>In collaboration with:</strong> WiTUSYD, Enactus USYD, GCG UNSW, AI Soc UNSW, MechSoc UTS, GDG USYD, StartUp Link USYD, SABS USYD & CSE Soc</p>
+                    <p>Your ideas aren't going to build themselves. <strong>Apply now!</strong> 🚀</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-arrows">
+            <span class="arrow disabled" id="prev-arrow">←</span>
+            <span class="arrow" id="next-arrow" onclick="showEvent('event-2')">→</span>
         </div>
     </div>
 
@@ -192,10 +278,13 @@
     </div>
 
     <div class="events-grid" id="events-2024" style="display: none;">
-        <div class="event-card"></div>
-        <div class="event-card"></div>
-        <div class="event-card"></div>
-        <div class="event-card"></div>
+        <img src="{{ url_for('static', filename='images/2024p1.jpg') }}" class="event-card">
+        <img src="{{ url_for('static', filename='images/2024p2.jpg') }}" class="event-card">
+        <img src="{{ url_for('static', filename='images/2024p3.jpg') }}" class="event-card">
+        <img src="{{ url_for('static', filename='images/2024p4.jpg') }}" class="event-card">
+        <img src="{{ url_for('static', filename='images/2024p5.jpg') }}" class="event-card">
+        <img src="{{ url_for('static', filename='images/2024p6.jpg') }}" class="event-card">
+        <img src="{{ url_for('static', filename='images/2024p7.jpg') }}" class="event-card">
     </div>
 
     <div class="events-grid" id="events-2025">
@@ -208,6 +297,28 @@
     </div>
 
     <script>
+        function showEvent(eventId) {
+            document.querySelectorAll('.event-container').forEach(container => {
+                container.style.display = 'none';
+            });
+            document.getElementById(eventId).style.display = 'flex';
+
+            // Update arrow states
+            const prevArrow = document.getElementById('prev-arrow');
+            const nextArrow = document.getElementById('next-arrow');
+            if (eventId === 'event-1') {
+                prevArrow.classList.add('disabled');
+                prevArrow.onclick = null;
+                nextArrow.classList.remove('disabled');
+                nextArrow.onclick = () => showEvent('event-2');
+            } else {
+                nextArrow.classList.add('disabled');
+                nextArrow.onclick = null;
+                prevArrow.classList.remove('disabled');
+                prevArrow.onclick = () => showEvent('event-1');
+            }
+        }
+
         function showEvents(year) {
             document.getElementById('events-2024').style.display = (year === 2024) ? 'flex' : 'none';
             document.getElementById('events-2025').style.display = (year === 2025) ? 'flex' : 'none';
@@ -220,5 +331,4 @@
     <footer>  
         {% include "footer.jinja" %}
     </footer>
-
 {% endblock %}

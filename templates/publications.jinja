@@ -2,7 +2,6 @@
 
 {% block content %} 
     <style>
-
         #header {
             text-align: center;
         }
@@ -128,6 +127,103 @@
             height: 18px;
         }
 
+        .slideshow-container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .slideshow-text {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .slideshow-title {
+            font-size: 2em;
+            font-weight: bold;
+            color: #7A1F8D;
+            margin-bottom: 8px;
+        }
+
+        .slideshow-subtitle {
+            font-size: 1.4em;
+            color: #7A1F8D;
+            margin-bottom: 15px;
+        }
+
+        .slideshow-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .slideshow-box img {
+            width: 360px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slideshow-content {
+            flex-grow: 1;
+            padding: 15px;
+            font-size: 20px;
+            line-height: 1.4;
+            color: black;
+        }
+
+        .slideshow-content .cta-button {
+            font-size: 20px;
+            padding: 10px 18px;
+            margin-top: 20px;
+        }
+
+        .slideshow-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .slideshow-button {
+            background: #7A1F8D;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .slideshow-button:hover {
+            background: #C991D1;
+            transform: scale(1.1);
+        }
+
+        .slideshow-button svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .slideshow-button.disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .slideshow-button.disabled:hover {
+            background: #ccc;
+            transform: none;
+        }
+
         .newsletter-container {
             text-align: center;
             margin: 80px 20px;
@@ -179,6 +275,49 @@
                 font-size: 20px;
             }
 
+            .slideshow-container {
+                padding: 15px;
+                margin: 30px 10px;
+            }
+
+            .slideshow-box {
+                flex-direction: column;
+            }
+
+            .slideshow-box img {
+                width: 100%;
+                height: auto;
+            }
+
+            .slideshow-content {
+                font-size: 18px;
+                padding: 10px;
+            }
+
+            .slideshow-content .cta-button {
+                font-size: 18px;
+                padding: 8px 16px;
+                margin-top: 15px;
+            }
+
+            .slideshow-title {
+                font-size: 1.8em;
+            }
+
+            .slideshow-subtitle {
+                font-size: 1.2em;
+            }
+
+            .slideshow-button {
+                width: 36px;
+                height: 36px;
+            }
+
+            .slideshow-button svg {
+                width: 18px;
+                height: 18px;
+            }
+
             .newsletter-container {
                 margin: 40px 10px;
                 padding: 20px;
@@ -194,7 +333,6 @@
                 height: 40px;
             }
         }
-
     </style>
 
     <div id="header">
@@ -203,7 +341,6 @@
     </div>
 
     <div class="page-content">
-
         <div class="content-container">
             <img src="{{ url_for('static', filename='images/first-year-guide.png') }}" alt="First Year Guide" class="content-image">
             <div class="content-text">
@@ -238,6 +375,44 @@
             </div>
         </div>
 
+        {# Podcast Slideshow #}
+        <div class="slideshow-container">
+            <div class="slideshow-text">
+                <h2 class="slideshow-title">WIT Interviews</h2>
+                <p class="slideshow-subtitle">Tune in to inspiring stories and insights</p>
+            </div>
+            <div class="slideshow-box">
+                <img id="slideshow-image" src="{{ url_for('static', filename='images/debuggingthebias.jpg') }}" alt="Debugging the Bias Podcast">
+                <div class="slideshow-content">
+                    <p>💻✨ <b>"Debugging the Bias"</b> with Madelaine Pankhurst!</p>
+                    <p>From navigating industry challenges to building a career on her own terms, Madelaine shares her journey and the lessons she’s learned along the way. 🌸</p>
+                    <p>Whether you're aiming for academia, industry, or both — her advice is a must-hear.</p>
+                    <a href="https://ugc.production.linktr.ee/582443f3-372e-4f3c-8aec-06f3f8f12238_Madelaine--WiT-Interview--1-.pdf" target="_blank" class="cta-button">
+                        <span class="cta-text">Listen to <b>Debugging the Bias</b></span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-external-link">
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            {# Navigation buttons for slideshow #}
+            <div class="slideshow-controls">
+                <button class="slideshow-button disabled">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="16,4 8,12 16,20"/>
+                    </svg>
+                </button>
+                <button class="slideshow-button disabled">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="8,4 16,12 8,20"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
         <div class="newsletter-container">
             <img src="static/images/wit_circle.png" alt="Newsletter Icon" class="newsletter-icon">
             <h3 class="purple-text">Join Our Newsletter</h3>
@@ -251,11 +426,9 @@
                 </svg>
             </a>
         </div>
-
     </div>
 
     <footer>  
         {% include "footer.jinja" %}
     </footer>
-
 {% endblock %}
